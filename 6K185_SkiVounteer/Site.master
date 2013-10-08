@@ -14,8 +14,8 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    My ASP.NET Application
-                </h1>
+                    <b style="mso-bidi-font-weight:normal"><span>Vail Beaver Creek 2015 World Alpine Ski Championships</span></b></h1>
+                <h2>Volunteer Training Project</h2>
             </div>
             <div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
