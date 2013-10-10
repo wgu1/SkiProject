@@ -32,7 +32,8 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="" Text="Commitee Info"/>
+                        <asp:MenuItem NavigateUrl="" Text="Event Info"/>
+                        <asp:MenuItem NavigateUrl="" Text="Committee Information"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
                         <asp:MenuItem NavigateUrl="" Text="Contact Us"/>
                         <asp:MenuItem NavigateUrl="" Text="Admin Login"/>
@@ -47,7 +48,18 @@
         </div>
     </div>
     <div class="footer">
-        
+        <asp:Menu ID="FootNavigation" runat="server" CssClass="footmenu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="" Text="Event Info"/>
+                        <asp:MenuItem NavigateUrl="" Text="Committee Information"/>
+                        <asp:MenuItem NavigateUrl="" Text="Committee Quiz"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="" Text="Contact Us"/>
+                        <asp:MenuItem NavigateUrl="" Text="Admin Login"/>
+                    </Items>
+                </asp:Menu>
+        <p>Copyright @2013</p>
     </div>
     </form>
 </body>
