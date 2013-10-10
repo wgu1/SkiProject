@@ -34,6 +34,7 @@
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="" Text="Event Info"/>
                         <asp:MenuItem NavigateUrl="" Text="Committee Information"/>
+                        <asp:MenuItem NavigateUrl="" Text="Committee Quiz"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
                         <asp:MenuItem NavigateUrl="" Text="Contact Us"/>
                         <asp:MenuItem NavigateUrl="" Text="Admin Login"/>
