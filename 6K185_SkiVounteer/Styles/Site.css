@@ -9,6 +9,7 @@ body
     margin: 0px;
     padding: 0px;
     color: #696969;
+    background-image: url(../Images/wallpaper.jpg);
 }
 
 a:link, a:visited
