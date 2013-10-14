@@ -5,13 +5,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
-        Welcome to ASP.NET!
-    </h2>
+        Welcome to Volunteer Training Project</h2>
     <p>
-        To learn more about ASP.NET visit <a href="http://www.asp.net" title="ASP.NET Website">www.asp.net</a>.
-    </p>
-    <p>
-        You can also find <a href="http://go.microsoft.com/fwlink/?LinkID=152368&amp;clcid=0x409"
-            title="MSDN ASP.NET Docs">documentation on ASP.NET at MSDN</a>.
-    </p>
-</asp:Content>
+        Thank you for participanting in Volunteer Training Project of Vail Beaver Creek 2015 World Alpine Ski Championships. Vail and Beaver Creek would like to provide you some information as well as trainings through this website. Please take this website as a tool to become familiar with this wonderful ski championships and the commiittee you are asigned to. You should read through the Committee information before taking a quiz. You are also welcomed to ask the committee questions through email. Enjoy and thank you agian!</p>
+    </asp:Content>

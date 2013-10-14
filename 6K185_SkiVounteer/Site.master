@@ -15,8 +15,9 @@
             <div class="title">
                 <h1>
                     <b style="mso-bidi-font-weight:normal"><span>Vail Beaver Creek 2015 World Alpine Ski Championships</span></b></h1>
-                <h2>Volunteer Training Project</h2>
+                <h3>Volunteer Training Project</h3>
             </div>
+             <asp:Image ID="headLogo" runat="server" CssClass="headLogo" ImageUrl="~/Images/logo_2.jpg" />
             <div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
@@ -27,6 +28,7 @@
                         [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
                     </LoggedInTemplate>
                 </asp:LoginView>
+               
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
@@ -37,6 +39,10 @@
                         <asp:MenuItem NavigateUrl="" Text="Committee Quiz"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
                         <asp:MenuItem NavigateUrl="" Text="Contact Us"/>
+                    </Items>
+                </asp:Menu>
+                <asp:Menu ID="Login" runat="server" CssClass="adminLogin" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
                         <asp:MenuItem NavigateUrl="" Text="Admin Login"/>
                     </Items>
                 </asp:Menu>
@@ -49,15 +55,15 @@
         </div>
     </div>
     <div class="footer">
-        <asp:Menu ID="FootNavigation" runat="server" CssClass="footmenu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+        <asp:Image ID="footImage" runat="server" CssClass="footImage" ImageUrl="~/Images/logo_3.jpg" />
+        <asp:Menu ID="FootNavigation" runat="server" CssClass="footmenu" EnableViewState="false" IncludeStyleBlock="false" Orientation="vertical">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="" Text="Event Info"/>
                         <asp:MenuItem NavigateUrl="" Text="Committee Information"/>
                         <asp:MenuItem NavigateUrl="" Text="Committee Quiz"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
-                        <asp:MenuItem NavigateUrl="" Text="Contact Us"/>
-                        <asp:MenuItem NavigateUrl="" Text="Admin Login"/>
+                        <asp:MenuItem NavigateUrl="" Text="Contact Us"/>             
                     </Items>
                 </asp:Menu>
         <p>Copyright @2013</p>
