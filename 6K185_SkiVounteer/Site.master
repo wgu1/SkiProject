@@ -38,7 +38,7 @@
                         <asp:MenuItem NavigateUrl="" Text="Committee Information"/>
                         <asp:MenuItem NavigateUrl="" Text="Committee Quiz"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
-                        <asp:MenuItem NavigateUrl="" Text="Contact Us"/>
+                        <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us"/>
                     </Items>
                 </asp:Menu>
                 <asp:Menu ID="Login" runat="server" CssClass="adminLogin" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
