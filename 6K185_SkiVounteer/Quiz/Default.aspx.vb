@@ -1,35 +1,71 @@
-﻿
+﻿Imports System.Data.SqlClient
+Imports System.Data
 Partial Class Quiz_Default
     Inherits System.Web.UI.Page
 
-    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         If (IsPostBack = False) Then
-            Dim ct As Integer = 1 ' this is the question counter
-            Dim i As Integer
-            For i = ct To 10
-                'this is the new radiobutton
-                Dim arrRButton(3) As RadioButton
-                Dim Pan As New Panel
-                'add on panel
-                Pan.ID = "ha" + Convert.ToString(ct)
 
-                Me.Controls.Add(Pan)
-                With Panel1
-                    arrRButton(0) = New RadioButton
-                    arrRButton(1) = New RadioButton
-                    arrRButton(2) = New RadioButton
-                    arrRButton(3) = New RadioButton
-                    .Controls.Add(arrRButton(0))
-                    .Controls.Add(New LiteralControl(("<br />"))) 'this is a line breaker between controls
-                    .Controls.Add(arrRButton(1))
-                    .Controls.Add(New LiteralControl(("<br />"))) 'this is a line breaker between controls
-                    .Controls.Add(arrRButton(2))
-                    .Controls.Add(New LiteralControl(("<br />"))) 'this is a line breaker between controls
-                    .Controls.Add(arrRButton(3))
-                    .Controls.Add(New LiteralControl(("<br />"))) 'this is a line breaker between controls
-                End With
-                'add one more panel
-            Next
+
+
+            Dim conStr As New SqlConnection(ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString)
+            Dim cmd As SqlCommand = New SqlCommand
+            Dim dataReader As SqlDataReader
+
+            With cmd
+                .Connection = conStr
+                .CommandType = CommandType.StoredProcedure
+                .CommandText = "Ski_Pulling_Quiz"
+                .Parameters.AddWithValue("@committeeName","AwardsCommittee")
+            End With
+            conStr.Open()
+            dataReader = cmd.ExecuteReader
+            Dim temID As String = ""
+            'start
+
+            While dataReader.Read
+
+                If temID <> dataReader("QuestionID").ToString Then
+
+                    Dim pan As New Panel    'create a new panel object
+
+                    Dim Qlabel As New Label 'create a new lable oject to contain the question
+
+                    temID = dataReader("QuestionID").ToString
+
+                    pan.ID = temID
+
+                    QuizPlace.Controls.Add(pan)
+                    Qlabel.Text = dataReader("QuestionContent")
+                    pan.Controls.Add(Qlabel)
+                    pan.Controls.Add(New LiteralControl(("<br />")))
+
+                End If
+
+                'add new new radio button
+                Dim rB As New RadioButton
+                rB.ID = dataReader("QuestionCode").ToString + dataReader("Answer").ToString
+                'if the question if T/F, we don't load the answer content
+                If dataReader("Answer").ToString = "F" Or dataReader("Answer").ToString = "T" Then
+
+                    rB.Text = dataReader("AnswerContent").ToString
+                Else
+                    rB.Text = dataReader("Answer").ToString + ". " + dataReader("AnswerContent").ToString
+                End If
+
+                rB.GroupName = dataReader("QuestionID").ToString 'the group name will allow the user only select one radio from the group
+
+                Dim myPanel As Panel = QuizPlace.FindControl(dataReader("QuestionID").ToString) 'find the panel just created
+                myPanel.Controls.Add(rB)    'add the new created radio button
+                myPanel.Controls.Add(New LiteralControl(("<br />")))    'change to a new line
+
+            End While
+
+
+
         End If
+
     End Sub
+
+
 End Class
