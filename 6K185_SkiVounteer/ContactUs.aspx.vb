@@ -6,9 +6,10 @@ Partial Class ContactUs
 
         Dim Message As New System.Net.Mail.MailMessage()
         Message.To.Add("6k185skivolunteersystemalert@gmail.com")
+        Message.CC.Add(EmailTextBox.Text.Trim)
         Message.Subject = SubjectTextBox.Text.Trim
-        Message.Body = "From: " & EmailTextBox.Text.Trim & vbCrLf & "Message: " & MessageTextBox.Text.Trim
-
+        Message.Body = MessageTextBox.Text.Trim
+        '"From: " & EmailTextBox.Text.Trim & vbCrLf & "Message: " & 
         Dim client As New SmtpClient()
         client.EnableSsl = client.Port = 587 Or client.Port = 465
 
