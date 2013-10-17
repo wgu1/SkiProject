@@ -269,7 +269,7 @@ div.accountInfo
     display: block;
     float: left;
     text-align: left;
-    width: 71%;
+    width: 73%;
 }
 
 .loginDisplay
@@ -334,4 +334,25 @@ div.accountInfo
     float:left;
     margin-left:10%;
 
+}
+
+/*About page
+    ---------------------------------------------------*/
+.subMenu 
+{
+    width:10%;
+    margin-left:2%;
+    margin-right:10%;
+    float:left;
+    margin-top:20px;
+}
+.Aboutcontent 
+{
+    width:60%;
+    float:left;
+}
+
+.aboutmenu 
+{
+    height:40px;
 }

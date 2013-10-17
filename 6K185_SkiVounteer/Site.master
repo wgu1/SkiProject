@@ -36,8 +36,8 @@
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="" Text="Event Info"/>
                         <asp:MenuItem NavigateUrl="" Text="Committee Information"/>
-                        <asp:MenuItem NavigateUrl="" Text="Committee Quiz"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="~/Quiz/Default.aspx" Text="Committee Quiz"/>
+                        <asp:MenuItem NavigateUrl="~/About/Default.aspx" Text="About"/>
                         <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us"/>
                     </Items>
                 </asp:Menu>
@@ -61,9 +61,9 @@
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="" Text="Event Info"/>
                         <asp:MenuItem NavigateUrl="" Text="Committee Information"/>
-                        <asp:MenuItem NavigateUrl="" Text="Committee Quiz"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
-                        <asp:MenuItem NavigateUrl="" Text="Contact Us"/>             
+                        <asp:MenuItem NavigateUrl="~/Quiz/Default.aspx" Text="Committee Quiz"/>
+                        <asp:MenuItem NavigateUrl="~/About/Default.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us"/>             
                     </Items>
                 </asp:Menu>
         <p>Copyright @2013</p>
