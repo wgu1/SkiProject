@@ -19,7 +19,7 @@
             </div>
              <asp:Image ID="headLogo" runat="server" CssClass="headLogo" ImageUrl="~/Images/logo_2.jpg" />
             <div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+               <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
                         [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
                     </AnonymousTemplate>
@@ -28,14 +28,13 @@
                         [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
                     </LoggedInTemplate>
                 </asp:LoginView>
-               
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="" Text="Event Info"/>
-                        <asp:MenuItem NavigateUrl="" Text="Committee Information"/>
+                        <asp:MenuItem NavigateUrl="~/CommitteeInformation.aspx" Text="Committee Information"/>
                         <asp:MenuItem NavigateUrl="~/Quiz/Default.aspx" Text="Committee Quiz"/>
                         <asp:MenuItem NavigateUrl="~/About/Default.aspx" Text="About"/>
                         <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us"/>
@@ -60,7 +59,7 @@
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="" Text="Event Info"/>
-                        <asp:MenuItem NavigateUrl="" Text="Committee Information"/>
+                        <asp:MenuItem NavigateUrl="~/CommitteeInformation.aspx" Text="Committee Information"/>
                         <asp:MenuItem NavigateUrl="~/Quiz/Default.aspx" Text="Committee Quiz"/>
                         <asp:MenuItem NavigateUrl="~/About/Default.aspx" Text="About"/>
                         <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us"/>             
