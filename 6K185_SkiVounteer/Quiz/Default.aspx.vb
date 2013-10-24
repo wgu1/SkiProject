@@ -43,6 +43,7 @@ Partial Class Quiz_Default
 
     Protected Sub StartQuizBtn_Click(sender As Object, e As EventArgs) Handles StartQuizBtn.Click
         'has items
+        Session("Email") = emailTextBox.Text.ToString()
         If committeeListBox.SelectedIndex >= 0 Then
             If Session("CommittName") Is Nothing Then Session("CommittName") = committeeListBox.SelectedValue
             Response.Redirect("~\Quiz\Quiz.aspx")

@@ -1,5 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data
+Imports System.Net.Mail
+
 Partial Class Quiz_Quiz
     Inherits System.Web.UI.Page
     'count question for each load
@@ -61,14 +63,21 @@ Partial Class Quiz_Quiz
             'compare the load question to the right answer
             If checkAnswer() = True Then
                 messagelabel.Text = ""
-                '*********************************************'
-                '*********************************************'
-                '*********************************************'
-                '***    If the quiz passed,send email   ******'
-                '*********************************************'
-                '*********************************************'
-                '*********************************************'
-                '*********************************************'
+                'Send e-mail to admin with confirmation of completion
+                Dim Message As New System.Net.Mail.MailMessage()
+                Message.To.Add("6k185skivolunteersystemalert@gmail.com")
+                Message.CC.Add(Session("Email"))
+                Message.Subject = Session("Email") & " has completed their required quiz"
+                Message.Body = "The user with the email " & Session("Email") & " has completed their required quiz successfully."
+                '"From: " & EmailTextBox.Text.Trim & vbCrLf & "Message: " & 
+                Dim client As New SmtpClient()
+                client.EnableSsl = client.Port = 587 Or client.Port = 465
+
+                Try
+                    client.Send(Message)
+                Catch ex As Exception
+                    ' ...
+                End Try
             End If
         Else
             messagelabel.Text = "Please select all the question!"

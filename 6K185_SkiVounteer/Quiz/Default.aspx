@@ -36,7 +36,7 @@
                       
                  </td>
                 <td>
-                    <asp:Button ID="emailSubmitBtn" runat="server" Text="Button" />
+                    <asp:Button ID="emailSubmitBtn" runat="server" Text="Submit" />
                 </td>
             </tr>
     </table>

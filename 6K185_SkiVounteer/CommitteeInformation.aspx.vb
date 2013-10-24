@@ -18,8 +18,8 @@ Partial Class Video
         Set(value As String)
         End Set
     End Property
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)
-        Dim CommitteeID As String
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim CommitteeID As Guid
         Dim sql As String
         Dim dr As SqlDataReader
         Dim strConnectionString As String
@@ -27,7 +27,7 @@ Partial Class Video
 
         strConnectionString = ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString
         Dim sqlConn As New SqlConnection(strConnectionString)
-        sql = "Select Top CommitteeID From Ski_Committee"
+        sql = "Select Top 1 CommitteeID From Ski_Committee"
         objCommand = New SqlCommand(sql, sqlConn)
         sqlConn.Open()
         dr = objCommand.ExecuteReader()
@@ -86,27 +86,6 @@ Partial Class Video
         End While
         dr.Close()
         sqlConn.Close()
-
-    End Sub
-    Protected Sub BindDDLCommittee()
-        Dim strSql As String
-        Dim objCommand As SqlCommand
-
-        Dim strConnectionString As String
-        strConnectionString = ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString
-        Dim sqlConn As New SqlConnection(strConnectionString)
-
-        strSql = "Select * from Ski_Committee"
-        sqlConn.Open()
-
-        objCommand = New SqlCommand(strSql, sqlConn)
-
-        ddlCommittee.DataSource = objCommand.ExecuteReader()
-        ddlCommittee.DataBind()
-
-        sqlConn.Close()
-        ddlCommittee.Items.Insert(0, "Select a Committee")
-        ddlCommittee.Items.Item(0).Value = -1
 
     End Sub
 End Class
