@@ -2,13 +2,21 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+
+
+
 <head runat="server">
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+    <script type= "text/javascript" src="Scripts/jquery.onepage-scroll.js"></script>
+    <script type= "text/javascript" src= "Scripts/jquery.onepage-scroll.min.js"></script>
+
 </head>
 <body>
+    
     <form runat="server">
     <div class="page">
         <div class="header">
@@ -48,7 +56,24 @@
             </div>
         </div>
         <div class="main">
+           
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $(".main").onepage_scroll({
+                            sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
+                            easing: "ease", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+                            animationTime: 1000, // AnimationTime let you define how long each section takes to animate
+                            pagination: true, // You can either show or hide the pagination. Toggle true for show, false for hide.
+                            updateURL: false, // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+                            beforeMove: function (index) { }, // This option accepts a callback function. The function will be called before the page moves.
+                            afterMove: function (index) { }, // This option accepts a callback function. The function will be called after the page moves.
+                            loop: false // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+                        });
+                    });
+    </script> 
+             
         </div>
         <div class="clear">
         </div>
