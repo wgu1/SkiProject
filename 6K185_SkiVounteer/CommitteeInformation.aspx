@@ -21,7 +21,16 @@
     <br />
     <div style="margin-left:auto;margin-right:auto;">
     <center>
-    <iframe width="600px" height="450px" src=<%=VideoURL%> frameborder="0" allowfullscreen></iframe>
+    <object id="Player" width="600px" height="450px" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6"></object>
+    <script type="text/vbscript">
+    <!--
+        On error resume next
+        Player.URL = ""
+        if err then msgbox "You need Windows Media Player 7." & chr(13) &_
+        "Go to http://www.microsoft.com/windowsmedia"
+        err.clear
+       -->
+    </script>
     </center>
     </div>
 </asp:Content>
