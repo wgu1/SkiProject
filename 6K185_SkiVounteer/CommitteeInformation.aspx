@@ -21,16 +21,10 @@
     <br />
     <div style="margin-left:auto;margin-right:auto;">
     <center>
-    <object id="Player" width="600px" height="450px" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6"></object>
-    <script type="text/vbscript">
-    <!--
-        On error resume next
-        Player.URL = ""
-        if err then msgbox "You need Windows Media Player 7." & chr(13) &_
-        "Go to http://www.microsoft.com/windowsmedia"
-        err.clear
-       -->
-    </script>
+    <object id="Player" width="600px" height="450px" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6">
+        <param name="autoStart" value="False" />
+        <param name="URL" value="http://localhost:64069/6K185_SkiVounteer/Wildlife.wmv" />
+    </object>     
     </center>
     </div>
 </asp:Content>
