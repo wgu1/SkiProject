@@ -18,7 +18,7 @@ Partial Class About_FAQ
         dr = objCommand.ExecuteReader()
         While dr.Read
             FAQContext += "<P><b> "
-            FAQContext += dr("Question") & "</b></p><br />"
+            FAQContext += dr("Question") & "</b></p>"
             FAQContext += " <p> " & dr("Answer") & "</p><br />"
         End While
         dr.Close()

@@ -18,7 +18,7 @@
     </div>
 
     <div class="FAQcontent">
-        <h2> FAQ </h2>
+        <h2> Frequent Ask Questions </h2>
         <%= TheFAQ()%>
 
     </div>
