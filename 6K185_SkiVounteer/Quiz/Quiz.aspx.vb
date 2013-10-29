@@ -13,6 +13,12 @@ Partial Class Quiz_Quiz
         allQuestion = 0
         If Not rightAnswer Is Nothing Then Array.Clear(rightAnswer, 0, rightAnswer.Length)
 
+        'if the session variable is null
+        If Session("CommittName") Is Nothing Then
+            Response.Redirect("~/Quiz/Default.aspx")
+            Exit Sub
+        End If
+
         'start pulling the dataset
         Dim conStr As New SqlConnection(ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString)
         Dim cmd As SqlCommand = New SqlCommand
@@ -78,6 +84,10 @@ Partial Class Quiz_Quiz
                 Catch ex As Exception
                     ' ...
                 End Try
+
+                'redirect the page
+                Response.Redirect("~/Quiz/FinishQuizConfirm.aspx")
+
             End If
         Else
             messagelabel.Text = "Please select all the question!"
