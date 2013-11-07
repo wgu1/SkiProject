@@ -45,7 +45,7 @@ Partial Class Video
         End While
         dr.Close()
 
-        sql = "Select FilePath, DocumentName From Ski_Committee Inner Join Ski_Document On Ski_Committee.DocumentID = Ski_Document.DocumentID Where CommitteeID = @CommitteeID"
+        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID"
         objCommand = New SqlCommand(sql, sqlConn)
         objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
         dr = objCommand.ExecuteReader()
@@ -77,7 +77,7 @@ Partial Class Video
         End While
         dr.Close()
 
-        sql = "Select FilePath, DocumentName From Ski_Committee Inner Join Ski_Document On Ski_Committee.DocumentID = Ski_Document.DocumentID Where CommitteeID = @CommitteeID"
+        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID"
         objCommand = New SqlCommand(sql, sqlConn)
         objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
         dr = objCommand.ExecuteReader()

@@ -7,27 +7,46 @@ Partial Class Admin_UpdateCommitteeInformation
         Dim URL As String
         Dim UploadURL As String
         URL = Right(videoTextBox.Text.Trim, 11)
-        UploadURL = "'//www.youtube.com/embed/" & URL & "'"
+        Dim VideoOk As Boolean = False
+        If videoTextBox.Text <> "" Then
+            If Left(videoTextBox.Text.Trim, 31) = "http://www.youtube.com/watch?v=" Then
+                VideoOk = True
+            End If
+        End If
+        If VideoOk = True Then
+            Try
+                UploadURL = "'//www.youtube.com/embed/" & URL & "'"
 
-        Dim CommitteeID As String
-        Dim sql As String
-        Dim strConnectionString As String
-        Dim objCommand As SqlCommand
+                Dim CommitteeID As String
+                Dim sql As String
+                Dim strConnectionString As String
+                Dim objCommand As SqlCommand
 
-        strConnectionString = ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString
-        Dim sqlConn As New SqlConnection(strConnectionString)
-        CommitteeID = ddlCommittee.SelectedValue
+                strConnectionString = ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString
+                Dim sqlConn As New SqlConnection(strConnectionString)
+                CommitteeID = ddlCommittee.SelectedValue
 
-        sql = "Update Ski_Video Set VideoURL = @VideoURL Where CommitteeID = @CommitteeID"
-        objCommand = New SqlCommand(sql, sqlConn)
-        objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
-        objCommand.Parameters.AddWithValue("@VideoURL", UploadURL)
-        sqlConn.Open()
-        objCommand.ExecuteNonQuery()
-
+                sql = "Update Ski_Video Set VideoURL = @VideoURL Where CommitteeID = @CommitteeID"
+                objCommand = New SqlCommand(sql, sqlConn)
+                objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
+                objCommand.Parameters.AddWithValue("@VideoURL", UploadURL)
+                sqlConn.Open()
+                objCommand.ExecuteNonQuery()
+                videoResultLabel.Text = "Video was updated successfully!"
+            Catch ex As Exception
+                videoResultLabel.Text = "Video could not be uploaded. Verify video is exists and try again."
+            End Try
+        Else
+            videoResultLabel.Text = "Invalid URL. Please verify the URL for the video."
+        End If
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If IsPostBack Then
+        End If
+    End Sub
+
+    Protected Sub documentButton_Click(sender As Object, e As EventArgs) Handles documentButton.Click
         If IsPostBack Then
             Dim path As String = Server.MapPath("~/CommitteeInformationDocuments/")
             Dim fileOK As Boolean = False
@@ -46,12 +65,30 @@ Partial Class Admin_UpdateCommitteeInformation
                     Try
                         documentUpload.PostedFile.SaveAs(path & _
                              documentUpload.FileName)
-                        ResultLabel.Text = "File uploaded!"
+                        Dim Document As String
+                        Document = documentUpload.FileName.ToString.Trim
+
+                        Dim CommitteeID As String
+                        Dim sql As String
+                        Dim strConnectionString As String
+                        Dim objCommand As SqlCommand
+
+                        strConnectionString = ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString
+                        Dim sqlConn As New SqlConnection(strConnectionString)
+                        CommitteeID = ddlCommittee.SelectedValue
+
+                        sql = "Update Ski_Document Set DocumentName = @Document Where CommitteeID = @CommitteeID"
+                        objCommand = New SqlCommand(sql, sqlConn)
+                        objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
+                        objCommand.Parameters.AddWithValue("@Document", Document)
+                        sqlConn.Open()
+                        objCommand.ExecuteNonQuery()
+                        documentResultLabel.Text = "Document was updated successfully!"
                     Catch ex As Exception
-                        ResultLabel.Text = "File could not be uploaded."
+                        documentResultLabel.Text = "Document could not be uploaded. Verify document is closed and properly saved and try again."
                     End Try
                 Else
-                    ResultLabel.Text = "Cannot accept files of this type."
+                    documentResultLabel.Text = "Cannot accept documents of this type. Upload only supports .doc, .docx, .pdf, or .rtf."
                 End If
             End If
         End If

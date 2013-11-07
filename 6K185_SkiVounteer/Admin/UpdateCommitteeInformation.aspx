@@ -15,11 +15,14 @@
     <asp:TextBox ID="videoTextBox" runat="server" Width="300px"></asp:TextBox>
     <asp:Button ID="videoButton" runat="server" Text="Upload" />
     <br />
+    <asp:Label ID="videoResultLabel" runat="server" Text=""></asp:Label>
+    <br />
     <br />
     <asp:Label ID="documentLabel" runat="server" Text="Please upload a new document:"></asp:Label>
     <br />
     <asp:FileUpload ID="documentUpload" runat="server" Width="600px" />
+    <asp:Button ID="documentButton" runat="server" Text="Upload" />
     <br />
-    <asp:Label ID="ResultLabel" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="documentResultLabel" runat="server" Text=""></asp:Label>
 </asp:Content>
 
