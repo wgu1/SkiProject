@@ -4,83 +4,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 
-
-
 <head runat="server">
-    <title></title>
-    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
+    <title>Volunteer Training Project</title>
+    <link href="~/Styles/Stylesheet.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
-    <script type= "text/javascript" src="Scripts/jquery.onepage-scroll.js"></script>
-    <script type= "text/javascript" src="Scripts/jquery.onepage-scroll.min.js"></script>
 
 </head>
 <body>
-    
-    <form runat="server">
-    <div class="page">
-        <div class="header">
+<div id="main">	
+<form runat="server">
+
+<div class="header">
             <div class="title">
-                <h1>
-                    <b style="mso-bidi-font-weight:normal"><span>Vail Beaver Creek 2015 World Alpine Ski Championships</span></b></h1>
-                <h3>Volunteer Training Project</h3>
+                <h1 align="center">Vail Beaver Creek 2015 World Alpine Ski Championships</h1>
+                <h3 align="center" >Volunteer Training Project</h3>
             </div>
-             <asp:Image ID="headLogo" runat="server" CssClass="headLogo" ImageUrl="~/Images/logo_2.jpg" />
-              <ul class="fancyNav">
-                        <li id="home"><a href="HomePage.aspx" class="homeIcon">Home</a></li>
-                        <li id="news"><a href="EventInformation.aspx">Event Information</a></li>
-                        <li id="about"><a href="FAQ.aspx">About us</a></li>
-                        <li id="Li1"><a href="CommitteeInformation.aspx">Committee Information</a></li>
-                        <li id="services"><a href="QuizDefault.aspx">Committee Quiz</a></li>
-                        <li id="contact"><a href="ContactUs.aspx">Contact us</a></li>
-              </ul>
+   
+	    <div id="menubar">
+          <ul id="nav">
+            <li><a href="HomePage.aspx">Home</a></li>
+            <li><a href="Event Information.aspx">Event Information</a></li>
             
-            
-            <div class="loginDisplay">
-               <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
-                    </LoggedInTemplate>
-                </asp:LoginView>
-            </div>
-
- 
-               
-            </div>
-        </div>
-        <div class="main">
-           
-
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $(".main").onepage_scroll({
-                            sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
-                            easing: "ease", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-                            animationTime: 1000, // AnimationTime let you define how long each section takes to animate
-                            pagination: true, // You can either show or hide the pagination. Toggle true for show, false for hide.
-                            updateURL: false, // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-                            beforeMove: function (index) { }, // This option accepts a callback function. The function will be called before the page moves.
-                            afterMove: function (index) { }, // This option accepts a callback function. The function will be called after the page moves.
-                            loop: false // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-                        });
-                    });
-    </script> 
+            <li><a href="QuizDefault.aspx">Take Your Quiz</a></li>
+            <li><a href="CommitteeInformation.aspx">Committee Information</a></li>
+            <li><a href="ContactUs.aspx">Contact Us</a></li>
              
-        </div>
-        <div class="clear">
-        </div>
+             
+          </ul>
+        </div><!--close menubar-->	
 
-    <div class="footer">
-        <asp:Image ID="footImage" runat="server" CssClass="footImage" ImageUrl="~/Images/logo_3.jpg" />
-      
-        <p>Copyright @2013</p>
+</div>  
+ 
+          
+<asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+
+   
+<div></div>
+
+
+<div class="footer">
+        
+      <a href="HomePage.aspx">Home</a> | <a href="Event Infomation.aspx">About The Event</a> | <a href="CommitteeInformation">Our Committee Members</a> | <a href="FAQ.aspx">Frequent Asked Questions</a> | <a href="ContactUs">Contact Us</a><br/><br/>
+	 
     </div>
-    </form>
+</form>  
+</div> <!--close main-->
 </body>
+
 </html>
