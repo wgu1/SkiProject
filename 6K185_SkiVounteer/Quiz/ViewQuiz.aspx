@@ -6,6 +6,7 @@
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" EnableModelValidation="True" ForeColor="#333333" GridLines="None" DataKeyNames="QuestionID">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
+            <asp:HyperLinkField DataNavigateUrlFields="QuestionCode"   DataNavigateUrlFormatString="~/Quiz/EditQuiz.aspx?id={0}"  Text="Edit" />
             <asp:BoundField DataField="QuestionID" HeaderText="QuestionID" SortExpression="QuestionID" ReadOnly="True" Visible="false" />
             <asp:BoundField DataField="QuestionCode" HeaderText="QuestionCode" SortExpression="QuestionCode" />
             <asp:BoundField DataField="QuestionType" HeaderText="QuestionType" SortExpression="QuestionType" />
