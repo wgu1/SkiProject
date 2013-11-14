@@ -1,17 +1,19 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="QuizDefault.aspx.vb" Inherits="Quiz_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <style type="text/css">
-        .auto-style1 {
-            width: 155px;
-        }
-    </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-        <table>
+  
+    <div class="background" align="center">
+    <div class="transbox">
+    
+    
+    
+    <table>
             <tr>
                 <td>
-                    <p>Please type you e-mail address</p>
+                    <h3>Please type you e-mail address</h3>
                 </td>
                 <td>
                     <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
@@ -62,5 +64,8 @@
                 </td>
             </tr>
     </table>
+
+    </div>
+        </div>
 </asp:Content>
 
