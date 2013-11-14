@@ -3,7 +3,10 @@
 Partial Class Video
     Inherits System.Web.UI.Page
     Private _VideoUrl As String
-    Private _DocumentName As String
+    Private _IntroDoc As String
+    Private _BodyDoc As String
+    Private _ContactInfo As String
+
     Protected Property VideoURL As String
         Get
             Return _VideoURL
@@ -11,13 +14,30 @@ Partial Class Video
         Set(value As String)
         End Set
     End Property
-    Protected Property DocumentName As String
+
+    Protected Property IntroDoc As String
         Get
-            Return _DocumentName
+            Return _IntroDoc
         End Get
         Set(value As String)
         End Set
     End Property
+
+    Protected Property BodyDoc As String
+        Get
+            Return _BodyDoc
+        End Get
+        Set(value As String)
+        End Set
+    End Property
+    Protected Property ContactInfo As String
+        Get
+            Return _ContactInfo
+        End Get
+        Set(value As String)
+        End Set
+    End Property
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim CommitteeID As Guid
         Dim sql As String
@@ -45,12 +65,30 @@ Partial Class Video
         End While
         dr.Close()
 
-        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID"
+        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID And TypeID = 1"
         objCommand = New SqlCommand(sql, sqlConn)
         objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
         dr = objCommand.ExecuteReader()
         While dr.Read
-            _DocumentName = dr("FilePath") & dr("DocumentName")
+            _IntroDoc = dr("FilePath") & dr("DocumentName")
+        End While
+        dr.Close()
+
+        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID And TypeID = 2"
+        objCommand = New SqlCommand(sql, sqlConn)
+        objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
+        dr = objCommand.ExecuteReader()
+        While dr.Read
+            _BodyDoc = dr("FilePath") & dr("DocumentName")
+        End While
+        dr.Close()
+
+        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID And TypeID = 3"
+        objCommand = New SqlCommand(sql, sqlConn)
+        objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
+        dr = objCommand.ExecuteReader()
+        While dr.Read
+            _ContactInfo = dr("FilePath") & dr("DocumentName")
         End While
         dr.Close()
         sqlConn.Close()
@@ -77,12 +115,30 @@ Partial Class Video
         End While
         dr.Close()
 
-        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID"
+        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID And TypeID = 1"
         objCommand = New SqlCommand(sql, sqlConn)
         objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
         dr = objCommand.ExecuteReader()
         While dr.Read
-            _DocumentName = dr("FilePath") & dr("DocumentName")
+            _IntroDoc = dr("FilePath") & dr("DocumentName")
+        End While
+        dr.Close()
+
+        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID And TypeID = 2"
+        objCommand = New SqlCommand(sql, sqlConn)
+        objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
+        dr = objCommand.ExecuteReader()
+        While dr.Read
+            _BodyDoc = dr("FilePath") & dr("DocumentName")
+        End While
+        dr.Close()
+
+        sql = "Select FilePath, DocumentName From Ski_Document Where CommitteeID = @CommitteeID And TypeID = 3"
+        objCommand = New SqlCommand(sql, sqlConn)
+        objCommand.Parameters.AddWithValue("@CommitteeID", CommitteeID)
+        dr = objCommand.ExecuteReader()
+        While dr.Read
+            _ContactInfo = dr("FilePath") & dr("DocumentName")
         End While
         dr.Close()
         sqlConn.Close()

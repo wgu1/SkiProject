@@ -18,6 +18,12 @@
     <asp:Label ID="videoResultLabel" runat="server" Text=""></asp:Label>
     <br />
     <br />
+        <asp:DropDownList ID="ddlDocType" runat="server" AutoPostBack="True" 
+                       DataTextField="Description" DataValueField="TypeID" DataSourceID="SqlDataSource2">
+                        </asp:DropDownList>
+    
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="SELECT * FROM [Ski_DocumentType]"></asp:SqlDataSource>
+    <br />
     <asp:Label ID="documentLabel" runat="server" Text="Please upload a new document:"></asp:Label>
     <br />
     <asp:FileUpload ID="documentUpload" runat="server" Width="600px" />

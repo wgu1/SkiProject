@@ -14,14 +14,26 @@
     <br />
     <div style="margin-left:auto;margin-right:auto;">
     <center>
-    <iframe src=<%=DocumentName%> width="810px" height="400px" scrolling="auto" frameborder="1"></iframe>
+    <iframe src=<%=IntroDoc%> width="810px" height="400px" scrolling="auto" frameborder="1"></iframe>
     </center>
     </div>
     <br />
     <br />
     <div style="margin-left:auto;margin-right:auto;">
     <center>
-  <iframe width="600px" height="450px" src=<%=VideoURL%> frameborder="0" allowfullscreen></iframe>    
+    <iframe width="810px" height="607px" src=<%=VideoURL%> frameborder="0" allowfullscreen></iframe>    
+    </center>
+    </div>
+    <br />
+    <div style="margin-left:auto;margin-right:auto;">
+    <center>
+    <iframe src=<%=BodyDoc%> width="810px" height="400px" scrolling="auto" frameborder="1"></iframe>
+    </center>
+    <br />
+    </div>    
+    <div style="margin-left:auto;margin-right:auto;">
+    <center>
+    <iframe src=<%=ContactInfo%> width="810px" height="400px" scrolling="auto" frameborder="1"></iframe>
     </center>
     </div>
 </asp:Content>
