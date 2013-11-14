@@ -53,10 +53,10 @@
     <asp:Button ID="btAdd" runat="server" Text="Add new question" />
     <br />
     <asp:Label ID="lbQuestion" runat="server" Text="Question: " Visible="False"></asp:Label>
-    <asp:TextBox ID="tbNewQ" runat="server" TextMode="MultiLine" Visible="False"></asp:TextBox>
+    <asp:TextBox ID="tbNewQ" runat="server" TextMode="MultiLine" Visible="False" Width="70%" Height="40px"></asp:TextBox>
     <br />
     <asp:Label ID="lbAnswer" runat="server" Text="Answer: " Visible="False"></asp:Label>
-    <asp:TextBox ID="tbNewA" runat="server" TextMode="MultiLine" Visible="False"></asp:TextBox>
+    <asp:TextBox ID="tbNewA" runat="server" TextMode="MultiLine" Visible="False" Width="70%" Height="40px"></asp:TextBox>
     <br />
     <asp:Button ID="btInsert" runat="server" Text="Insert" Visible="False" />
     <asp:Button ID="btCancel" runat="server" Text="Cancel" Visible="False" />
