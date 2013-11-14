@@ -5,7 +5,20 @@
 } 
 
 html
-{ height: 100%;}
+{ height: 100%;
+
+  background: transparent url(../Images/wallpaper.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+form {
+    height: 100%;
+}
+
 
 *
 { margin: 0;
@@ -41,7 +54,7 @@ h1 {
     font: bold 165% Arial, Helvetica, sans-serif;
 }
 h2
-{ font: normal 165% Arial, Helvetica, sans-serif;}
+{ font: normal 150% Arial, Helvetica, sans-serif;}
 
 h3
 { font: normal 130% Arial, Helvetica, sans-serif;}
@@ -90,7 +103,8 @@ ol li
 
 #main
 { padding: 30px 0px;
-  background: transparent url(../Images/wallpaper.jpg) no-repeat;}
+
+}
   
 header
 { height: 120px;
@@ -101,8 +115,29 @@ header
   background: -webkit-linear-gradient(#43A9FF, #0043A8);
   border-radius: 15px 15px 0px 0px;
   -moz-border-radius: 15px 15px 0px 0px;
-  -webkit-border: 15px 15px 0px 0px;  }
+  -webkit-border: 15px 15px 0px 0px; }
  
+
+
+
+
+.transbox
+  {
+  width:980px;
+  height:700px;
+  align-content:center;
+  margin:80px 40px 40px 20px;
+  background-color:black;
+  border:1px solid black;
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+  }
+.transbox p
+  {
+  margin:30px 40px;
+  font-weight:bold;
+  color:black;
+  }
 nav
 { height: 100px;}  
   
@@ -237,6 +272,8 @@ footer a, footer a:hover
   color: #1D1D1D;
   text-decoration: none;
   padding-bottom: 20px;}
+
+
 
 footer a:hover
 { text-decoration: underline;}

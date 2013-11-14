@@ -9,10 +9,14 @@
     <link href="~/Styles/Stylesheet.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
+
+
 <body>
+
+
 <div id="main">	
+
 <form runat="server">
 
 <div class="header">
@@ -21,35 +25,33 @@
                 <h3 align="center" >Volunteer Training Project</h3>
             </div>
    
-	    <div id="menubar">
-          <ul id="nav">
+	        <div id="menubar">
+            <ul id="nav">
             <li><a href="HomePage.aspx">Home</a></li>
             <li><a href="Event Information.aspx">Event Information</a></li>
-            
             <li><a href="QuizDefault.aspx">Take Your Quiz</a></li>
             <li><a href="CommitteeInformation.aspx">Committee Information</a></li>
             <li><a href="ContactUs.aspx">Contact Us</a></li>
-             
-             
-          </ul>
-        </div><!--close menubar-->	
+            </ul>
+            </div><!--close menubar-->	
 
-</div>  
- 
-          
+</div> <!--close header-->  
+
+              
 <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
 
    
-<div></div>
 
 
-<div class="footer">
+
+<div class="footer" align="center">
         
-      <a href="HomePage.aspx">Home</a> | <a href="Event Infomation.aspx">About The Event</a> | <a href="CommitteeInformation">Our Committee Members</a> | <a href="FAQ.aspx">Frequent Asked Questions</a> | <a href="ContactUs">Contact Us</a><br/><br/>
-	 
-    </div>
+    <a href="HomePage.aspx">Home</a> | <a href="Event Infomation.aspx">About The Event</a> | <a href="CommitteeInformation">Our Committee Members</a> | <a href="FAQ.aspx">Frequent Asked Questions</a> | <a href="ContactUs">Contact Us</a><br/><br/>
+</div>
 </form>  
 </div> <!--close main-->
+
+
 </body>
 
 </html>
