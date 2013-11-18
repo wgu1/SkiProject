@@ -4,17 +4,17 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
    
-    <asp:FormView runat = "server" DefaultMode="Edit"  DataSourceID="SqlDataSource1" OnDataBound="changeType">
+    <asp:FormView runat = "server" DefaultMode="Edit"  databound="changetype" DataSourceID="SqlDataSource1"  EnableModelValidation="True">
         <EditItemTemplate>
           <table>
-                  <tr>
+                  <%--<tr>
                       <td colspan="2">
                           <asp:Label ID="QuestionLabel" runat="server" Text="Question Number"></asp:Label>
                       </td>
                       
-                      <td colspan="8">
+                       <td colspan="8">
                           <asp:Label ID="QcontentLabel" runat="server" Text='<%# Eval("QuestionCode") %>'></asp:Label>
-                      </td>
+                      </td> 
                   </tr>
 
 
@@ -25,7 +25,7 @@
 
                       <td colspan="8">
                           <asp:Label ID="questionTypeLabel" runat="server" Text='<%# Eval("QuestionType") %>'></asp:Label>
-                      </td>
+                      </td>--%>
                   </tr>
 
                   <tr>
@@ -33,9 +33,32 @@
                           <asp:Label ID="contentLabel" runat="server" Text="Question"></asp:Label>
                       </td>
                       <td colspan="8">
-                          <asp:TextBox ID="qContentTextbox" runat="server" Text='<%# Eval("QuestionContent") %>'></asp:TextBox>
+                          <asp:TextBox ID="qContentTextbox" runat="server" Text='<%# Eval("QuestionContent">%'></asp:TextBox>
                       </td>
                   </tr>
+                  
+              <%--<tr>
+                      <td colspan="2">
+                          <asp:Label ID="ASWLabel" runat="server" Text="Answer"></asp:Label>
+                      </td>
+                      <td colspan="2">
+                          <asp:TextBox ID="ASWLabel1" runat="server" Text='<%# Eval("Answer")%>'></asp:TextBox>
+                      </td>
+                  </tr> --%>
+                  <tr>
+                      <td colspan="2">
+                          <asp:Label ID="ASWContentLabel" runat="server" Text="AnswerText"></asp:Label>
+                      </td>
+                      <td colspan="8">
+                          <asp:TextBox ID="ASWContentTextbox1" runat="server" Text='<%= TheContent(0) %>'></asp:TextBox>
+                          <asp:TextBox ID="ASWContentTextbox2" runat="server" Text='<%= TheContent(1) %>'></asp:TextBox>
+                          <asp:TextBox ID="ASWContentTextbox3" runat="server" Text='<%= TheContent(2) %>'></asp:TextBox>
+                          <asp:TextBox ID="ASWContentTextbox4" runat="server" Text='<%= TheContent(3) %>'></asp:TextBox>
+                  </tr>
+              
+
+
+
           </table>
         </EditItemTemplate>
     </asp:FormView>
