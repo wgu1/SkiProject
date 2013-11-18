@@ -7,7 +7,7 @@
 
     <div class="background" align="center">
     <div class="transbox">
-    <p>The world is coming to Vail and Beaver Creek in just 
+    <p >The world is coming to Vail and Beaver Creek in just 
         500 days for the 2015 FIS Alpine World Ski Championships. 
         Check out what this trio of elite athletes has to say about the Championships 
         and then start making your plans to join them and us 
