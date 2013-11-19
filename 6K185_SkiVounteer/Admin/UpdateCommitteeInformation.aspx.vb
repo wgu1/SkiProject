@@ -1,5 +1,7 @@
 ﻿Imports System.Data.SqlClient
+Imports Microsoft.Office.Interop.Word
 Imports Microsoft.Office.Interop
+
 
 Partial Class Admin_UpdateCommitteeInformation
     Inherits System.Web.UI.Page
@@ -49,14 +51,11 @@ Partial Class Admin_UpdateCommitteeInformation
 
     Protected Sub documentButton_Click(sender As Object, e As EventArgs) Handles documentButton.Click
         If IsPostBack Then
-            Dim path As String = Server.MapPath("~/CommitteeInformationDocuments/")
+            Dim path As String = Server.MapPath("~/CommitteeInformation/CommitteeInformationDocuments/")
             Dim fileOK As Boolean = False
+            Dim WordApp As Word.Application
+            Dim Document As String
 
-            'Dim WordApp As Word.Application
-            ' WordApp = New Word.Application
-            'WordApp.Visible = False
-            'WordApp.Documents.Open(Server.MapPath("~/CommitteeInformationDocuments/" & documentUpload.FileName.ToString.Trim))
-            'WordApp.ActiveDocument.SaveAs2(Server.MapPath("~/CommitteeInformationDocuments/" & Left(documentUpload.FileName.ToString.Trim, Len(documentUpload.FileName.ToString.Trim) - 3) & ".pdf", Word.WdSaveFormat.wdFormatPDF))
             If documentUpload.HasFile Then
                 Dim fileExtension As String
                 fileExtension = System.IO.Path. _
@@ -65,17 +64,51 @@ Partial Class Admin_UpdateCommitteeInformation
                     {".doc", ".docx", ".pdf"}
                 For i As Integer = 0 To allowedExtensions.Length - 1
                     If fileExtension = allowedExtensions(i) Then
-                        fileOK = True
+                        If fileExtension = ".docx" Then
+                            Try
+                                WordApp = New Word.Application
+                                WordApp.Visible = False
+                                documentUpload.PostedFile.SaveAs(path & documentUpload.FileName)
+                                WordApp.Documents.Open(path & documentUpload.FileName)
+                                WordApp.ActiveDocument.SaveAs2(path & Left(documentUpload.FileName.ToString.Trim, Len(documentUpload.FileName.ToString.Trim) - 5) & ".pdf", Word.WdSaveFormat.wdFormatPDF)
+                                Document = Left(documentUpload.FileName.ToString.Trim, Len(documentUpload.FileName.ToString.Trim) - 4) & ".pdf"
+                                WordApp.ActiveDocument.Close()
+                                WordApp.Quit()
+                                fileOK = True
+                            Catch ex As Exception
+                                documentResultLabel.Text = "Document could not be uploaded. Verify document is closed and properly saved and try again."
+                            End Try
+                        End If
+                        If fileExtension = ".doc" Then
+                            Try
+                                WordApp = New Word.Application
+                                WordApp.Visible = False
+                                documentUpload.PostedFile.SaveAs(path & documentUpload.FileName)
+                                WordApp.Documents.Open(path & documentUpload.FileName)
+                                WordApp.ActiveDocument.SaveAs2(path & Left(documentUpload.FileName.ToString.Trim, Len(documentUpload.FileName.ToString.Trim) - 4) & ".pdf", Word.WdSaveFormat.wdFormatPDF)
+                                Document = Left(documentUpload.FileName.ToString.Trim, Len(documentUpload.FileName.ToString.Trim) - 4) & ".pdf"
+                                WordApp.ActiveDocument.Close()
+                                WordApp.Quit()
+                                fileOK = True
+                            Catch ex As Exception
+                                documentResultLabel.Text = "Document could not be uploaded. Verify document is closed and properly saved and try again."
+                            End Try
+                        End If
+                        If fileExtension = ".pdf" Then
+                            Try
+                                documentUpload.PostedFile.SaveAs(path & _
+                                    documentUpload.FileName)
+                                Document = documentUpload.FileName.ToString.Trim
+                                fileOK = True
+                            Catch ex As Exception
+                                documentResultLabel.Text = "Document could not be uploaded. Verify document is closed and properly saved and try again."
+                            End Try
+                        End If
                     End If
                 Next
 
                 If fileOK Then
                     Try
-                        documentUpload.PostedFile.SaveAs(path & _
-                             documentUpload.FileName)
-                        Dim Document As String
-                        Document = documentUpload.FileName.ToString.Trim
-
                         Dim CommitteeID As String
                         Dim TypeID As Integer
                         Dim sql As String
