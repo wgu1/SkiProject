@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
    
-    <asp:FormView runat = "server" DefaultMode="Edit"  databound="changetype" DataSourceID="SqlDataSource1"  EnableModelValidation="True">
+    <asp:FormView ID="EditFormView" runat = "server" DefaultMode="Edit"  databound="changetype" DataSourceID="SqlDataSource1"  EnableModelValidation="True">
         <EditItemTemplate>
           <table>
                   <%--<tr>
