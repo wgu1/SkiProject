@@ -9,7 +9,8 @@
     <asp:ListItem value="1">True/False</asp:ListItem>
     <asp:ListItem value="2">Multiple Choice</asp:ListItem>
 </asp:DropDownList>
-<asp:FormView ID="QuestionFormView" runat = "server" DefaultMode="Insert"   EnableModelValidation="True">
+ <asp:Panel ID="questionPanel" runat="server" Width ="100%">
+<asp:FormView ID="QuestionFormView" runat = "server" DefaultMode="Insert"  Width="100%" EnableModelValidation="True">
         <InsertItemTemplate>
           <table id="questionPart">
                   <tr>
@@ -24,19 +25,18 @@
 
                   <tr>
                     <td colspan="2">
-                          <asp:Label ID="ASWLabel" runat="server" Text="Answer"></asp:Label>
+                          <asp:Label ID="ASWLabel" runat="server" Text="Right Answer"></asp:Label>
                       </td>
                       <td colspan="2">
                           <asp:DropDownList ID="answerDropDownList" runat="server">
-                              <asp:ListItem value="1">True</asp:ListItem>
-                              <asp:ListItem value="2">False</asp:ListItem>
+                           
                           </asp:DropDownList>
                       </td>
                   </tr> 
          </table>
         </InsertItemTemplate>
     </asp:FormView> 
-<asp:FormView ID="AnswerFormView" runat = "server" DefaultMode="Insert"   EnableModelValidation="True">
+<asp:FormView ID="AnswerFormView" runat = "server" DefaultMode="Insert" Width="100%" EnableModelValidation="True">
        <InsertItemTemplate>
          <table >
                   <tr>
@@ -78,5 +78,7 @@
           </table>
        </InsertItemTemplate>
      </asp:FormView> 
+</asp:Panel>
+    <asp:Button ID="__submitButton" runat="server" Text="Submit" />
 </asp:Content>
 
