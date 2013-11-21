@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Admin/admin.master" AutoEventWireup="false" CodeFile="UpdateCommitteeInformation.aspx.vb" Inherits="Admin_UpdateCommitteeInformation" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false" CodeFile="UpdateCommitteeInformation.aspx.vb" Inherits="Admin_UpdateCommitteeInformation" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:Label ID="CommitteeLabel" runat="server" Text="Please select a committe to modify: "></asp:Label>   
     <asp:DropDownList ID="ddlCommittee" runat="server" AutoPostBack="True" 
                        DataTextField="CommitteeName" DataValueField="CommitteeID" DataSourceID="SqlDataSource1">
