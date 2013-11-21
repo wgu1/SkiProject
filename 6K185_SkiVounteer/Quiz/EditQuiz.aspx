@@ -33,7 +33,7 @@
                           <asp:Label ID="contentLabel" runat="server" Text="Question"></asp:Label>
                       </td>
                       <td colspan="8">
-                          <asp:TextBox ID="qContentTextbox" runat="server" Text='<%# Eval("QuestionContent">%'></asp:TextBox>
+                          <asp:TextBox ID="qContentTextbox" runat="server" ></asp:TextBox>
                       </td>
                   </tr>
                   
@@ -50,10 +50,10 @@
                           <asp:Label ID="ASWContentLabel" runat="server" Text="AnswerText"></asp:Label>
                       </td>
                       <td colspan="8">
-                          <asp:TextBox ID="ASWContentTextbox1" runat="server" Text='<%= TheContent(0) %>'></asp:TextBox>
-                          <asp:TextBox ID="ASWContentTextbox2" runat="server" Text='<%= TheContent(1) %>'></asp:TextBox>
-                          <asp:TextBox ID="ASWContentTextbox3" runat="server" Text='<%= TheContent(2) %>'></asp:TextBox>
-                          <asp:TextBox ID="ASWContentTextbox4" runat="server" Text='<%= TheContent(3) %>'></asp:TextBox>
+                          <asp:TextBox ID="ASWContentTextbox1" runat="server" ></asp:TextBox>
+                          <asp:TextBox ID="ASWContentTextbox2" runat="server" ></asp:TextBox>
+                          <asp:TextBox ID="ASWContentTextbox3" runat="server" ></asp:TextBox>
+                          <asp:TextBox ID="ASWContentTextbox4" runat="server" ></asp:TextBox>
                   </tr>
               
 

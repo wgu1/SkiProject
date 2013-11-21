@@ -1,11 +1,19 @@
 ﻿Imports System.Data.SqlClient
 
+
+
 Partial Class Video
     Inherits System.Web.UI.Page
     Private _VideoUrl As String
     Private _IntroDoc As String
     Private _BodyDoc As String
     Private _ContactInfo As String
+
+    Public ReadOnly Property Committee() As String
+        Get
+            Return ddlCommittee.SelectedValue
+        End Get
+    End Property
 
     Protected Property VideoURL As String
         Get
@@ -100,6 +108,7 @@ Partial Class Video
         Dim dr As SqlDataReader
         Dim strConnectionString As String
         Dim objCommand As SqlCommand
+
 
         strConnectionString = ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString
         Dim sqlConn As New SqlConnection(strConnectionString)
