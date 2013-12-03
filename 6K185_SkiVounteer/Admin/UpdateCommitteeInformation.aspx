@@ -3,10 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    
+    <div id="adminholder">
     <asp:Label ID="CommitteeLabel" runat="server" Text="Please select a committe to modify: "></asp:Label>   
-    <asp:DropDownList ID="ddlCommittee" runat="server" AutoPostBack="True" 
-                       DataTextField="CommitteeName" DataValueField="CommitteeID" DataSourceID="SqlDataSource1">
-                        </asp:DropDownList>
+    <asp:DropDownList ID="ddlCommittee" runat="server" AutoPostBack="True" DataTextField="CommitteeName" DataValueField="CommitteeID" DataSourceID="SqlDataSource1">
+    </asp:DropDownList>
     
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="SELECT * FROM [Ski_Committee]"></asp:SqlDataSource>
     <br />
@@ -26,9 +27,10 @@
     <br />
     <asp:Label ID="documentLabel" runat="server" Text="Please upload a new document:"></asp:Label>
     <br />
-    <asp:FileUpload ID="documentUpload" runat="server" Width="600px" />
+    <asp:FileUpload ID="documentUpload" runat="server" Width="200px" />
     <asp:Button ID="documentButton" runat="server" Text="Upload" />
     <br />
     <asp:Label ID="documentResultLabel" runat="server" Text=""></asp:Label>
+    </div>
 </asp:Content>
 
