@@ -1,4 +1,5 @@
-﻿
+﻿Imports System.Data.SqlClient
+Imports System.Data
 Partial Class Quiz_AddNewQuiz
     Inherits System.Web.UI.Page
 
@@ -42,6 +43,35 @@ Partial Class Quiz_AddNewQuiz
     End Sub
 
     Protected Sub __submitButton_Click(sender As Object, e As EventArgs) Handles __submitButton.Click
-
+        Dim conStr As New SqlConnection(ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString)
+        Dim cmd As SqlCommand = New SqlCommand
+        ''find control 
+        Dim questionTextbox As TextBox = QuestionFormView.FindControl("qContentTextbox")
+        Dim correctDrop As DropDownList = QuestionFormView.FindControl("answerDropDownList")
+        Dim answer1Textbox As TextBox = AnswerFormView.FindControl("AanswerTextbox")
+        Dim answer2Textbox As TextBox = AnswerFormView.FindControl("BanswerTextbox")
+        Dim answer3Textbox As TextBox = AnswerFormView.FindControl("CanswerTextbox")
+        Dim answer4Textbox As TextBox = AnswerFormView.FindControl("DContentTextbox")
+        Dim ct As Integer = 0 'this will be used as a count 
+        With cmd
+            .Connection = conStr
+            .CommandType = CommandType.StoredProcedure
+            .CommandText = "Ski_Insert_New_Quiz"
+            .Parameters.AddWithValue("@QuestionType", questionTypeDropDownList.SelectedValue)
+            .Parameters.AddWithValue("@QuestinContent", questionTextbox.Text)
+            .Parameters.AddWithValue("@CorrentAnswer", correctDrop.Text)
+            ''if this is multiple choice
+            If questionTypeDropDownList.SelectedValue = "2" Then
+                .Parameters.AddWithValue("@AnswerA", answer1Textbox.Text)
+                .Parameters.AddWithValue("@AnswerB", answer2Textbox.Text)
+                .Parameters.AddWithValue("@AnswerC", answer3Textbox.Text)
+                .Parameters.AddWithValue("@AnswerD", answer4Textbox.Text)
+            End If
+        End With
+        conStr.Open()
+        ''excute the add function
+        cmd.ExecuteNonQuery()
+        ''redirect
+        Response.Redirect("~\Quiz\ViewQuiz.aspx")
     End Sub
 End Class
