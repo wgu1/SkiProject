@@ -32,7 +32,6 @@ Partial Class Quiz_EditQuiz
             .CommandType = Data.CommandType.StoredProcedure
             .Parameters.AddWithValue("@id", questionID)
             .CommandText = "Ski_PullingQuizByQuestionID"
-
         End With
 
 
