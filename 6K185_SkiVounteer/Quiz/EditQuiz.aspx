@@ -54,12 +54,27 @@
                           <asp:TextBox ID="ASWContentTextbox2" runat="server" ></asp:TextBox>
                           <asp:TextBox ID="ASWContentTextbox3" runat="server" ></asp:TextBox>
                           <asp:TextBox ID="ASWContentTextbox4" runat="server" ></asp:TextBox>
+                          </td>
+                      
                   </tr>
-              
-
-
-
+              <tr>
+                  <td colspan="4">
+                          <asp:Label ID="correctASWLabel" runat="server" Text="Correct Answer"></asp:Label>
+                            <asp:TextBox ID="correctASWTextbox" runat="server"></asp:TextBox>
+                    </td>
+              </tr>
+              <tr>
+                  <td colspan="4">
+                          <asp:Label ID="useLabel" runat="server" Text="Use this question "></asp:Label>
+                            <asp:CheckBox ID="useCheckbox" runat="server"></asp:CheckBox>
+                    </td>
+                </tr>
+                   
           </table>
+                <asp:Button ID="btUpdate" runat="server" CommandName="update" Text="Update"/>
+                <asp:Button ID="btCancel" runat="server" CommandName="cancel" Text="Cancel"/>
+
+
         </EditItemTemplate>
     </asp:FormView>
 
