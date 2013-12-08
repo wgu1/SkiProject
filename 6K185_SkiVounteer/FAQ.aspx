@@ -8,11 +8,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-
+    <div class="background" align="center">
     <div class="FAQcontent">
-        <h2> Frequent Ask Questions </h2>
+        <h3> Frequent Ask Questions </h3>
         <%= TheFAQ()%>
 
+    </div>
     </div>
 </asp:Content>
 
