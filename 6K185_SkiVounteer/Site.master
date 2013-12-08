@@ -28,7 +28,7 @@
 	        <div id="menubar">
             <ul id="nav">
             <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/HomePage.aspx" runat="server">Home</asp:HyperLink></li>
-            <li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/Event Information.aspx" runat="server">Event Information</asp:HyperLink></li>
+       
             <li><asp:HyperLink ID="HyperLink3" NavigateUrl="QuizDefault.aspx" runat="server">Take Your Quiz</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink4" NavigateUrl="CommitteeInformation/default.aspx" runat="server">Committee Information</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink5" NavigateUrl="ContactUs.aspx" runat="server">Contact Us</asp:HyperLink></li>
@@ -47,7 +47,7 @@
 
 <div class="footer" align="center" >
         
-    <asp:HyperLink ID="HyperLink6" NavigateUrl="~/HomePage.aspx" runat="server">Home</asp:HyperLink> | <asp:HyperLink ID="HyperLink7" NavigateUrl="~/Event Information.aspx" runat="server">Event Information</asp:HyperLink> | <asp:HyperLink ID="HyperLink8" NavigateUrl="CommitteeInformation/default.aspx" runat="server">Our Committee Members</asp:HyperLink> | <asp:HyperLink ID="HyperLink10" NavigateUrl="FAQ.aspx" runat="server">Frequent Asked Questions</asp:HyperLink> | <asp:HyperLink ID="HyperLink11" NavigateUrl="About.aspx" runat="server">About</asp:HyperLink> | <asp:HyperLink ID="HyperLink9" NavigateUrl="ContactUs.aspx" runat="server">Contact Us</asp:HyperLink><br/><br/>
+    <asp:HyperLink ID="HyperLink6" NavigateUrl="~/HomePage.aspx" runat="server">Home</asp:HyperLink>|<asp:HyperLink ID="HyperLink8" NavigateUrl="CommitteeInformation/default.aspx" runat="server">Our Committee Members</asp:HyperLink> | <asp:HyperLink ID="HyperLink10" NavigateUrl="FAQ.aspx" runat="server">Frequent Asked Questions</asp:HyperLink> | <asp:HyperLink ID="HyperLink11" NavigateUrl="About.aspx" runat="server">About</asp:HyperLink> | <asp:HyperLink ID="HyperLink9" NavigateUrl="ContactUs.aspx" runat="server">Contact Us</asp:HyperLink><br/><br/>
 </div>
 </form>  
 </div> <!--close main-->

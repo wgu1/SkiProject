@@ -7,11 +7,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    
+    <div class="background" align="center">
 
-    <div class="Aboutcontent">
-        <h2> 2015 Vail Beaver Creek Organizing Committee </h2> <br />
+        <h2> 2015 Vail Beaver Creek Organizing Committee </h2> 
         <h4>Executive Committee</h4>
-        <p>Ceil Folz, President<br /> 
+        <p>Ceil Folz, President 
             Erik Borgen<br />
             Bill Esrey<br />
             Harry Frampton<br />
@@ -68,6 +69,6 @@
             Volunteers Committee Cheryl Jensen<br />
             Youth Committee Margie Gart</p>
     </div>
-
+        </div>
 </asp:Content>
 
