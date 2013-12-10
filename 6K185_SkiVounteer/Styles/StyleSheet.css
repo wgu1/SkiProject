@@ -14,9 +14,10 @@ html
   background-size: cover;
 
 }
+
 #adminholder{
     height: 650px; 
-    padding-top:60px;
+    padding-top:30px;
     padding-left:210px
 }
 #adminholder2{
@@ -116,8 +117,8 @@ ol li
   margin-right: auto;}
 
 #main
-{ padding: 40px 0px;
-
+{ padding: 40px 0;
+  
 }
   
 header
@@ -131,8 +132,14 @@ header
   -moz-border-radius: 15px 15px 0px 0px;
   -webkit-border: 15px 15px 0px 0px; }
 
+.FAQcontent 
+{   padding-left: 0px;
+    width:600PX;
+    height: 800px;
 
 
+
+}
 
 
 .transbox {
