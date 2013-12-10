@@ -5,9 +5,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
  <%-- the dropdownlist --%>
 <<div id="adminholder">
+
    <asp:Label runat="server" Text="Select the quiz type you want to add" />
+
+<h3>Please add more quiz questions(true/false or multiple choice)</h3>
+
 <asp:DropDownList ID="questionTypeDropDownList" runat="server" AutoPostBack="true">
-    <asp:ListItem value="0">Select Value</asp:ListItem>
+    <asp:ListItem value="0">Select Question Type to add</asp:ListItem>
     <asp:ListItem value="1">True/False</asp:ListItem>
     <asp:ListItem value="2">Multiple Choice</asp:ListItem>
 </asp:DropDownList>

@@ -10,4 +10,8 @@ Partial Class Quiz_ViewQuiz
     Protected Sub AddQuestion_Click(sender As Object, e As EventArgs) Handles AddQuestion.Click
         Response.Redirect(Page.ResolveClientUrl("AddNewQuiz.aspx"))
     End Sub
+
+    Protected Sub AssignQuestion_Click(sender As Object, e As EventArgs) Handles AssignQuestion.Click
+        Response.Redirect(Page.ResolveClientUrl("AssignQuiz.aspx"))
+    End Sub
 End Class

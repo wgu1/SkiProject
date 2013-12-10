@@ -1,11 +1,11 @@
-﻿<%@ Page Title="Log In" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false"
+﻿<%@ Page Title="Log In" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="false"
     CodeFile="Login.aspx.vb" Inherits="Account_Login" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     
-    <div id="adminholder">
+    <div id="adminholder2">
     <h2>
         Log In
     </h2>
