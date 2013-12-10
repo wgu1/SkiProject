@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
  <%-- the dropdownlist --%>
 <<div id="adminholder">
+   <asp:Label runat="server" Text="Select the quiz type you want to add" />
 <asp:DropDownList ID="questionTypeDropDownList" runat="server" AutoPostBack="true">
     <asp:ListItem value="0">Select Value</asp:ListItem>
     <asp:ListItem value="1">True/False</asp:ListItem>

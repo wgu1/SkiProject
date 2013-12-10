@@ -41,6 +41,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div>
+        <asp:label runat="server" Text="Select a Community to assign quizzes:" />
         <asp:DropDownList ID="CommunitteeDropDownList" runat="server" DataSourceID="communityDataSource" AutoPostBack="true" DataTextField="CommitteeName" DataValueField="CommitteeID" Height="16px"></asp:DropDownList>
         <asp:SqlDataSource ID="communityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="SELECT [CommitteeName], [CommitteeID] FROM [Ski_Committee]"></asp:SqlDataSource>
     </div>
@@ -74,6 +75,8 @@
 
             <tr>
                 <td class="auto-style4">
+                    <asp:Label runat="server" Text="Current Quizzes"></asp:Label>
+                     <br />
                      <asp:ListBox ID="currentQListbox" runat="server" DataSourceID="CommitteeQuestions" DataTextField="question" DataValueField="QuestionID" Height="114px" ></asp:ListBox>
                 </td>
 
@@ -82,6 +85,8 @@
                     <asp:Button ID="removeButton" runat="server" Text="Remove-->" />
                 </td>
                 <td class="auto-style7">
+                    <asp:Label runat="server" Text="Quiz Poll:"/>
+                     <br />
                      <asp:ListBox ID="RestQListbox" runat="server" DataSourceID="CommitteeRestQuestions" DataTextField="question" DataValueField="QuestionID" Height="102px"></asp:ListBox>
                      
                 </td>
