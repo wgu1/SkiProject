@@ -26,8 +26,8 @@
 
 <div class="header">
             <div class="title">
-                <h1 align="center"><a href="../HomePage.aspx">Vail Beaver Creek 2015 World Alpine Ski Championships</a></h1>
-                <h5 align="center"><a href="../Account/Login.aspx">Admin Logout</a></h5>
+                <h1 align="center"><a href="../../HomePage.aspx">Vail Beaver Creek 2015 World Alpine Ski Championships</a></h1>
+                <h5 align="center"><a href="../../Account/Login.aspx">Admin Logout</a></h5>
             </div>
    
 	        <div id="adminmenubar">
