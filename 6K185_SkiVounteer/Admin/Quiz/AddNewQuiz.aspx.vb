@@ -72,6 +72,6 @@ Partial Class Quiz_AddNewQuiz
         ''excute the add function
         cmd.ExecuteNonQuery()
         ''redirect
-        Response.Redirect("~\Quiz\ViewQuiz.aspx")
+        Response.Redirect("~\Admin\Quiz\ViewQuiz.aspx")
     End Sub
 End Class
