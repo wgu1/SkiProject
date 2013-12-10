@@ -60,7 +60,7 @@
               <tr>
                   <td colspan="4">
                           <asp:Label ID="correctASWLabel" runat="server" Text="Correct Answer"></asp:Label>
-                            <asp:TextBox ID="correctASWTextbox" runat="server"></asp:TextBox>
+                            <asp:dropdownlist ID="correctASWDrop" runat="server"></asp:dropdownlist>
                     </td>
               </tr>
               <tr>

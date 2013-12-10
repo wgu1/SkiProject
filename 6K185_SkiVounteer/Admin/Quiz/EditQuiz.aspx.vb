@@ -5,6 +5,7 @@ Partial Class Quiz_EditQuiz
     Private answer(0 To 3) As String
     Private question As String
     Private QuestionCode As String
+    
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If IsPostBack = False Then
             Dim dr As SqlDataReader
@@ -18,11 +19,19 @@ Partial Class Quiz_EditQuiz
             Dim answer3Textbox As TextBox = EditFormView.FindControl("ASWContentTextbox3")
             Dim answer4Textbox As TextBox = EditFormView.FindControl("ASWContentTextbox4")
             Dim useCheckbox As CheckBox = EditFormView.FindControl("useCheckbox")
-            Dim correctAnswerTextbox As TextBox = EditFormView.FindControl("correctASWTextbox")
-
+            Dim _answerDropdown As New DropDownList
+            _answerDropdown = EditFormView.FindControl("correctASWDrop")
+            _answerDropdown.Items.Clear() ''clean all the items
             index = 0
 
-            QuestionCode = Right(Request.RawUrl, 3)
+            'get the questionCode from the url
+            Dim startIndex As Integer
+            Dim endIndex As Integer
+
+            startIndex = Request.RawUrl.IndexOf("=") + 2
+            endIndex = Request.RawUrl.Length
+            QuestionCode = Mid(Request.RawUrl, startIndex, endIndex)
+
 
 
             strConnectionString = ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString
@@ -56,11 +65,20 @@ Partial Class Quiz_EditQuiz
                 answer2Textbox.Enabled = False
                 answer3Textbox.Visible = False
                 answer4Textbox.Visible = False
+                ''add items
+                _answerDropdown.Items.Add(New ListItem("T", "1"))
+                _answerDropdown.Items.Add(New ListItem("F", "2"))
+
             ElseIf index = 4 Then
                 answer1Textbox.Text = answer(0)
                 answer2Textbox.Text = answer(1)
                 answer3Textbox.Text = answer(2)
                 answer4Textbox.Text = answer(3)
+                _answerDropdown.Items.Add(New ListItem("A", "1"))
+                _answerDropdown.Items.Add(New ListItem("B", "2"))
+                _answerDropdown.Items.Add(New ListItem("C", "3"))
+                _answerDropdown.Items.Add(New ListItem("D", "4"))
+
             End If
 
             'adding current use or not and which is the current answer
@@ -71,7 +89,7 @@ Partial Class Quiz_EditQuiz
             objCommand.Parameters.AddWithValue("@QuestionCode", QuestionCode)
             dr = objCommand.ExecuteReader
             While dr.Read
-                correctAnswerTextbox.Text = dr("QAnswer")
+                _answerDropdown.SelectedValue = dr("QAnswer")
                 If dr("CurrentlyUse") = "Y" Then
                     useCheckbox.Checked = True
                 Else
@@ -98,12 +116,19 @@ Partial Class Quiz_EditQuiz
             Dim currentUse As String
             Dim sqlSource As New SqlDataSource()
 
-            QuestionCode = Right(Request.RawUrl, 3)
+            'get the questionCode from the url
+            Dim startIndex As Integer
+            Dim endIndex As Integer
+
+            startIndex = Request.RawUrl.IndexOf("=") + 2
+            endIndex = Request.RawUrl.Length
+            QuestionCode = Mid(Request.RawUrl, startIndex, endIndex)
 
             'find control
             Dim questionTextbox As TextBox = EditFormView.FindControl("qContentTextbox")
             Dim useCheckbox As CheckBox = EditFormView.FindControl("useCheckbox")
-            Dim correctASWTextbox As TextBox = EditFormView.FindControl("correctASWTextbox")
+            Dim _answerDropdown As New DropDownList
+            _answerDropdown = EditFormView.FindControl("correctASWDrop")
 
             'record current user
             If useCheckbox.Checked = True Then
@@ -134,7 +159,7 @@ Partial Class Quiz_EditQuiz
             objCommand = New SqlCommand(sql_1, sqlConn)
             objCommand.Parameters.AddWithValue("@QuestionCode", QuestionCode)
             objCommand.Parameters.AddWithValue("@QuesitonContent", questionTextbox.Text)
-            objCommand.Parameters.AddWithValue("@QAswer", correctASWTextbox.Text)
+            objCommand.Parameters.AddWithValue("@QAswer", _answerDropdown.SelectedValue)
             objCommand.Parameters.AddWithValue("@CurrentlyUse", currentUse)
             sqlConn.Open()
             objCommand.ExecuteNonQuery()
