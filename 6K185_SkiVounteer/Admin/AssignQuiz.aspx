@@ -10,6 +10,33 @@
         .auto-style2 {
             height: 18px;
         }
+        .auto-style3 {
+            height: 18px;
+            width: 243px;
+        }
+        .auto-style4 {
+            height: 72px;
+            width: 243px;
+        }
+        .auto-style5 {
+            width: 243px;
+            height: 20px;
+        }
+        .auto-style6 {
+            height: 18px;
+            width: 246px;
+        }
+        .auto-style7 {
+            height: 72px;
+            width: 246px;
+        }
+        .auto-style8 {
+            width: 246px;
+            height: 20px;
+        }
+        .auto-style9 {
+            height: 20px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -21,7 +48,7 @@
     <div>
         <table>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style3">
 
                 </td>
 
@@ -29,14 +56,24 @@
                    
                 </td>
 
-                <td class="auto-style2">
+                <td class="auto-style6">
 
+                    <asp:Label ID="SearchLabel" runat="server" Text="Search Question Content:"></asp:Label>
+                    <asp:TextBox ID="searchTextbox" runat="server"></asp:TextBox>
+                    <asp:Button ID="searchButton" runat="server" Text="Search" />
+                    <br />
+                    <asp:Label ID="QuestionTypeLabel" runat="server" Text="QuestionType"></asp:Label>
+                    <asp:DropDownList ID="QuestionTypeDropdownlist"  AutoPostBack="true" runat="server" >
+                            <asp:ListItem value="0">Select Value</asp:ListItem>
+                            <asp:ListItem value="1">True/False</asp:ListItem>
+                            <asp:ListItem value="2">Multiple Choice</asp:ListItem>
+                    </asp:DropDownList>
                 </td>
             </tr>
 
 
             <tr>
-                <td class="auto-style1">
+                <td class="auto-style4">
                      <asp:ListBox ID="currentQListbox" runat="server" DataSourceID="CommitteeQuestions" DataTextField="question" DataValueField="QuestionID" Height="114px" ></asp:ListBox>
                 </td>
 
@@ -44,7 +81,7 @@
                     <asp:Button ID="addButton" runat="server" Text="<--Add" />
                     <asp:Button ID="removeButton" runat="server" Text="Remove-->" />
                 </td>
-                <td class="auto-style1">
+                <td class="auto-style7">
                      <asp:ListBox ID="RestQListbox" runat="server" DataSourceID="CommitteeRestQuestions" DataTextField="question" DataValueField="QuestionID" Height="102px"></asp:ListBox>
                      
                 </td>
@@ -52,14 +89,14 @@
 
 
            <tr>
-                <td>
+                <td class="auto-style5">
+                    <asp:Label ID="hiddenSearchLabel" runat="server" Text=" " Visible="false"></asp:Label>
+                </td>
 
-                    &nbsp;</td>
-
-                <td>
+                <td class="auto-style9">
                     
                 </td>
-                <td>
+                <td class="auto-style8">
 
                 </td>
             </tr>
@@ -72,6 +109,8 @@
         <asp:SqlDataSource ID="CommitteeRestQuestions" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="Ski_Admin_Assign_Rest_Quiz_By_CommitteeID" SelectCommandType="StoredProcedure">
             <SelectParameters>
                 <asp:ControlParameter ControlID="CommunitteeDropDownList" Name="commiteeID" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="QuestionTypeDropdownlist" Name="questionType" ConvertEmptyStringToNull ="true" PropertyName="SelectedValue" Type="Int32" />
+                <asp:ControlParameter ControlID="hiddenSearchLabel" Name="searchValue" ConvertEmptyStringToNull ="true" DefaultValue="" PropertyName="Text" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
     

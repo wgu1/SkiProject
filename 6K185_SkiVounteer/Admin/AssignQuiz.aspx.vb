@@ -53,4 +53,7 @@ Partial Class Admin_AssignQuiz
         Response.Redirect(Request.RawUrl)
     End Sub
 
+    Protected Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
+        hiddenSearchLabel.Text = searchTextbox.Text
+    End Sub
 End Class
