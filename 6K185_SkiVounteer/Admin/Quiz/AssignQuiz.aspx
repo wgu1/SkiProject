@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false" CodeFile="AssignQuiz.aspx.vb" Inherits="Admin_AssignQuiz" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-   <div id="adminholder">
+   <div id="adminholder2">
     
      <style type="text/css">
         .auto-style1 {

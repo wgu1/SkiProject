@@ -4,7 +4,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-  
+
     <div class="background" align="center">
     
     
@@ -13,8 +13,11 @@
     <table>
             <tr>
                 <td>
-                    <h3>Please type you e-mail address</h3>
+                    <h3>Please type you e-mail address to start your quiz</h3>
                 </td>
+                <br />
+                <br />
+
                 <td>
                     <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="emailVlidator" runat="server" ErrorMessage="Please enter your e-mail" ControlToValidate ="emailTextBox"></asp:RequiredFieldValidator>
@@ -66,6 +69,7 @@
     </table>
 
     </div>
+
       
 </asp:Content>
 
