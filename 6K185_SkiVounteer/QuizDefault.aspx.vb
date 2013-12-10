@@ -46,7 +46,7 @@ Partial Class Quiz_Default
         Session("Email") = emailTextBox.Text.ToString()
         If committeeListBox.SelectedIndex >= 0 Then
             If Session("CommittName") Is Nothing Then Session("CommittName") = committeeListBox.SelectedValue
-            Response.Redirect("~\Quiz\Quiz.aspx")
+            Response.Redirect("Quiz.aspx")
         Else
             messageLb.Font.Bold = True
             messageLb.Text = "Please select a committee to continue"

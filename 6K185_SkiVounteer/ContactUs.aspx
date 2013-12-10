@@ -9,20 +9,23 @@
     
     
     <p>
-        Please feel free to send us any comments or questions using the form below:</p>
-    <br />
     <asp:Label ID="EmailLabel" runat="server" Text="Your E-mail:"></asp:Label>
-    <br />
-    <asp:TextBox ID="EmailTextBox" runat="server" Width="360px"></asp:TextBox>
-    <br />
+        <asp:TextBox ID="EmailTextBox" runat="server" Width="160px"></asp:TextBox>
+        &nbsp;
     <asp:Label ID="SubjectLabel" runat="server" Text="Subject:"></asp:Label>
+    <asp:TextBox ID="SubjectTextBox" runat="server" Width="241px"></asp:TextBox>
+        </p>
+    <asp:Label ID="MessageLabel" runat="server" Text="Questions Regarding the Training Project"></asp:Label>
     <br />
-    <asp:TextBox ID="SubjectTextBox" runat="server" Width="360px"></asp:TextBox>
+        <br />
     <br />
-    <asp:Label ID="MessageLabel" runat="server" Text="Message:"></asp:Label>
+   
+
+    <asp:TextBox ID="MessageTextBox" textmode="MultiLine" runat="server" Height="170px" Width="720px"></asp:TextBox>
     <br />
-    <asp:TextBox ID="MessageTextBox" textmode="MultiLine" runat="server" Height="200px" Width="720px"></asp:TextBox>
     <br />
+    <br />
+
     <asp:Button ID="SubmitButton" runat="server" Text="Submit" />
 
     </div>

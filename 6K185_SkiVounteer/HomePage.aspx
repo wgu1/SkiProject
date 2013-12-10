@@ -7,7 +7,7 @@
     <div id="site_content">		
     <div id="main">
     <h2 align="center">
-        Welcome to Volunteer Training Project</h2>
+       Welcome to Volunteer Training Project</h2>
     <p>
         Thank you for participanting in Volunteer Training Project of Vail Beaver Creek 2015 World Alpine Ski Championships. 
         Vail and Beaver Creek would like to provide you some information as well as trainings through this website. 
@@ -22,13 +22,13 @@
 		<div class="sidebar">
           <div class="sidebar_item">
             <h2>Latest Update</h2>
-            <h3>March 2014</h3>
+            <h5>March 2014</h5>
             <p>Much needs to be done</p>         
 		  </div><!--close sidebar_item--> 
         </div><!--close sidebar-->
 		<div class="sidebar">
           <div class="sidebar_item">
-            <h3>February 2014</h3>
+            <h5>February 2014</h5>
             <p>Browse Committee Information</p>         
 		  </div><!--close sidebar_item--> 
         </div><!--close sidebar-->  		
@@ -55,12 +55,12 @@
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elit sapien, tempus sit amet hendrerit volutpat, euismod vitae risus. Etiam consequat, sem et vulputate dapibus, diam enim tristique est, vitae porta eros mauris ut orci. Praesent sed velit odio. Ut massa arcu, suscipit viverra molestie at, aliquet a metus. Nullam sit amet tellus dui, ut tincidunt justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis egestas laoreet. Nunc non ipsum metus, non laoreet urna. Vestibulum quis risus quis diam mattis tempus. Vestibulum suscipit pretium tempor. </p>
 	  
 		  <div class="content_container">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt.</p>
+		    <p></p>
 
 		    </div><!--close button_small-->
 		  </div><!--close content_container-->
           <div class="content_container">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt.</p>          
+		    <p></p>          
 
 		    </div><!--close button_small-->		  
 		  </div><!--close content_container-->	

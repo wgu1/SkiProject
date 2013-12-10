@@ -26,11 +26,11 @@
 
 <div class="header">
             <div class="title">
-                <h1 align="center">Vail Beaver Creek 2015 World Alpine Ski Championships</h1>
+                <h1 align="center"><a href="../HomePage.aspx">Vail Beaver Creek 2015 World Alpine Ski Championships</a></h1>
                 <h3 align="center" >Volunteer Training Project</h3>
             </div>
    
-	        <div id="menubar">
+	        <div id="adminmenubar">
             <ul id="nav">
             <li><asp:HyperLink ID="HyperLink1" NavigateUrl="AdminHomePage.aspx" runat="server">Admin Homepage</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/UpdateCommitteeInformation.aspx" runat="server">Update Committee Information</asp:HyperLink></li>

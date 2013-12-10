@@ -86,7 +86,7 @@ Partial Class Quiz_Quiz
                 End Try
 
                 'redirect the page
-                Response.Redirect("~/Quiz/FinishQuizConfirm.aspx")
+                Response.Redirect("FinishQuizConfirm.aspx")
 
             End If
         Else

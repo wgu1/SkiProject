@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     
     <div id="adminholder">
-    <h2>Frequent Ask Questions</h2>
+    <h3>Frequent Ask Questions</h3>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="SELECT [Question], [Answer], [ID] FROM [Ski_FAQ]" DeleteCommand="DELETE FROM [Ski_FAQ] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Ski_FAQ] ([Question], [Answer], [ID]) VALUES (@Question, @Answer, @ID)" UpdateCommand="UPDATE [Ski_FAQ] SET [Question] = @Question, [Answer] = @Answer WHERE [ID] = @ID">
             <DeleteParameters>
                 <asp:Parameter Name="ID" Type="String" />

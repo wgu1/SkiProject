@@ -12,7 +12,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div id="adminholder"> 
-        <h2>Welcome to the Admin Panel</h2>
+        <h3>Welcome to the Admin Panel</h3>
     
   <iframe width="540" height="350" src="//www.youtube.com/embed/ZzkhsUWe8Ls" frameborder="0" allowfullscreen></iframe>
 
