@@ -32,7 +32,7 @@
             <li><asp:HyperLink ID="HyperLink3" NavigateUrl="QuizDefault.aspx" runat="server">Take Your Quiz</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink4" NavigateUrl="CommitteeInformation/default.aspx" runat="server">Committee Information</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink5" NavigateUrl="ContactUs.aspx" runat="server">Contact Us</asp:HyperLink></li>
-            <li><asp:HyperLink ID="HyperLink12" NavigateUrl="Admin/AdminHomePage.aspx" runat="server">Admin Login</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink12" NavigateUrl="Account/Login.aspx" runat="server">Admin Login</asp:HyperLink></li>
             </ul>
             </div><!--close menubar-->	
 

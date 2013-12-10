@@ -27,14 +27,16 @@
 <div class="header">
             <div class="title">
                 <h1 align="center"><a href="../HomePage.aspx">Vail Beaver Creek 2015 World Alpine Ski Championships</a></h1>
-                <h3 align="center" >Volunteer Training Project</h3>
+                <h5 align="center"><a href="../Account/Login.aspx">Admin Logout</a></h5>
             </div>
    
 	        <div id="adminmenubar">
             <ul id="nav">
             <li><asp:HyperLink ID="HyperLink1" NavigateUrl="AdminHomePage.aspx" runat="server">Admin Homepage</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/UpdateCommitteeInformation.aspx" runat="server">Update Committee Information</asp:HyperLink></li>
-            <li><asp:HyperLink ID="HyperLink3" NavigateUrl="~/Admin/updateFAQ.aspx" runat="server">Update Quiz</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink3" NavigateUrl="~/Admin/Quiz/ViewQuiz.aspx" runat="server">Update Quiz</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink4" NavigateUrl="~/Admin/Register.aspx" runat="server">New Admin Registration</asp:HyperLink></li>
+
 
             </ul>
             </div><!--close menubar-->	

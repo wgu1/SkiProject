@@ -1,7 +1,9 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="AssignQuiz.aspx.vb" Inherits="Admin_AssignQuiz" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false" CodeFile="AssignQuiz.aspx.vb" Inherits="Admin_AssignQuiz" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <style type="text/css">
+   <div id="adminholder">
+    
+     <style type="text/css">
         .auto-style1 {
             height: 72px;
         }
@@ -72,6 +74,9 @@
                 <asp:ControlParameter ControlID="CommunitteeDropDownList" Name="commiteeID" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
+    
     </div>
+    </div>
+
 </asp:Content>
 

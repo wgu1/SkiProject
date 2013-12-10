@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="EditQuiz.aspx.vb" Inherits="Quiz_EditQuiz" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false" CodeFile="EditQuiz.aspx.vb" Inherits="Quiz_EditQuiz" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-   
+   <div id="adminholder">
     <asp:FormView ID="EditFormView" runat = "server" DefaultMode="Edit"  databound="changetype" DataSourceID="SqlDataSource1"  EnableModelValidation="True">
         <EditItemTemplate>
           <table>
@@ -83,5 +83,6 @@
             <asp:QueryStringParameter Name="ID" QueryStringField="ID" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
+    </div>
 </asp:Content>
 

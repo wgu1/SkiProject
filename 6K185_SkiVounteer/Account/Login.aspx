@@ -1,9 +1,11 @@
-﻿<%@ Page Title="Log In" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="false"
+﻿<%@ Page Title="Log In" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false"
     CodeFile="Login.aspx.vb" Inherits="Account_Login" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    
+    <div id="adminholder">
     <h2>
         Log In
     </h2>
@@ -41,9 +43,10 @@
                     </p>
                 </fieldset>
                 <p class="submitButton">
-                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="LoginUserValidationGroup"/>
+                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="LoginUserValidationGroup" OnClick="LoginButton_Click"/>
                 </p>
             </div>
         </LayoutTemplate>
     </asp:Login>
+        </div>
 </asp:Content>

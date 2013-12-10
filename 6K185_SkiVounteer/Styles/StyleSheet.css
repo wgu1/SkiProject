@@ -17,7 +17,7 @@ html
 #adminholder{
     height: 650px; 
     padding-top:20px;
-    padding-left:300px
+    padding-left:210px
 }
 form {
 
@@ -161,7 +161,7 @@ header
   text-align: center; 
   margin: 0 auto;}  
 #adminmenubar
-{ width: 750px;
+{ width: 1000px;
   height: 50px;
   text-align: center; 
   margin: 0 auto;}  

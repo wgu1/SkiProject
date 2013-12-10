@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="AddNewQuiz.aspx.vb" Inherits="Quiz_AddNewQuiz" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false" CodeFile="AddNewQuiz.aspx.vb" Inherits="Quiz_AddNewQuiz" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
  <%-- the dropdownlist --%>
+<<div id="adminholder">
 <asp:DropDownList ID="questionTypeDropDownList" runat="server" AutoPostBack="true">
     <asp:ListItem value="0">Select Value</asp:ListItem>
     <asp:ListItem value="1">True/False</asp:ListItem>
@@ -80,5 +81,6 @@
      </asp:FormView> 
 </asp:Panel>
     <asp:Button ID="__submitButton" runat="server" Text="Submit" />
+</div>
 </asp:Content>
 

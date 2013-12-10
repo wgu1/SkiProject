@@ -1,14 +1,15 @@
-﻿<%@ Page Title="Register" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="false"
+﻿<%@ Page Title="Register" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false"
     CodeFile="Register.aspx.vb" Inherits="Account_Register" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <div id="adminholder">
     <asp:CreateUserWizard ID="RegisterUser" runat="server" EnableViewState="false">
-        <LayoutTemplate>
+        <HeaderTemplate>
             <asp:PlaceHolder ID="wizardStepPlaceholder" runat="server"></asp:PlaceHolder>
             <asp:PlaceHolder ID="navigationPlaceholder" runat="server"></asp:PlaceHolder>
-        </LayoutTemplate>
+        </HeaderTemplate>
         <WizardSteps>
             <asp:CreateUserWizardStep ID="RegisterUserWizardStep" runat="server">
                 <ContentTemplate>
@@ -72,4 +73,5 @@
             </asp:CreateUserWizardStep>
         </WizardSteps>
     </asp:CreateUserWizard>
+        </div>
 </asp:Content>

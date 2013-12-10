@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ViewQuiz.aspx.vb" Inherits="Quiz_ViewQuiz" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false" CodeFile="ViewQuiz.aspx.vb" Inherits="Quiz_ViewQuiz" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <div id="adminholder">
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" EnableModelValidation="True" ForeColor="#333333" GridLines="None" DataKeyNames="QuestionID">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
@@ -20,7 +21,9 @@
         <RowStyle BackColor="#EFF3FB" />
         <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
     </asp:GridView>
-
+        <asp:Button ID="AssignQuestion" runat="server" Text="Assign Quiz Questions" />
+        <asp:Button ID="AddQuestion" runat="server" Text="Add Quiz Questions" />
+</div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="SELECT * FROM [vw_Ski_ViewQuestions] order by [QuestionCode] desc"></asp:SqlDataSource>
 </asp:Content>
 
