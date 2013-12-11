@@ -15,7 +15,7 @@ Partial Class Quiz_Quiz
 
         'if the session variable is null
         If Session("CommittName") Is Nothing Then
-            Response.Redirect("~/Quiz/Default.aspx")
+            Response.Redirect("~/QuizDefault.aspx")
             Exit Sub
         End If
 
@@ -61,6 +61,7 @@ Partial Class Quiz_Quiz
             QuizPlace.Controls.Add(rB)    'add the new created radio button
             QuizPlace.Controls.Add(New LiteralControl(("<br />")))    'change to a new line
         End While
+
     End Sub
 
 
