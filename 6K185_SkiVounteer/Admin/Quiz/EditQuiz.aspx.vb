@@ -66,18 +66,18 @@ Partial Class Quiz_EditQuiz
                 answer3Textbox.Visible = False
                 answer4Textbox.Visible = False
                 ''add items
-                _answerDropdown.Items.Add(New ListItem("T", "1"))
-                _answerDropdown.Items.Add(New ListItem("F", "2"))
+                _answerDropdown.Items.Add(New ListItem("T", "T"))
+                _answerDropdown.Items.Add(New ListItem("F", "F"))
 
             ElseIf index = 4 Then
                 answer1Textbox.Text = answer(0)
                 answer2Textbox.Text = answer(1)
                 answer3Textbox.Text = answer(2)
                 answer4Textbox.Text = answer(3)
-                _answerDropdown.Items.Add(New ListItem("A", "1"))
-                _answerDropdown.Items.Add(New ListItem("B", "2"))
-                _answerDropdown.Items.Add(New ListItem("C", "3"))
-                _answerDropdown.Items.Add(New ListItem("D", "4"))
+                _answerDropdown.Items.Add(New ListItem("A", "A"))
+                _answerDropdown.Items.Add(New ListItem("B", "B"))
+                _answerDropdown.Items.Add(New ListItem("C", "C"))
+                _answerDropdown.Items.Add(New ListItem("D", "D"))
 
             End If
 
@@ -159,7 +159,7 @@ Partial Class Quiz_EditQuiz
             objCommand = New SqlCommand(sql_1, sqlConn)
             objCommand.Parameters.AddWithValue("@QuestionCode", QuestionCode)
             objCommand.Parameters.AddWithValue("@QuesitonContent", questionTextbox.Text)
-            objCommand.Parameters.AddWithValue("@QAswer", _answerDropdown.SelectedItem)
+            objCommand.Parameters.AddWithValue("@QAswer", _answerDropdown.Text)
             objCommand.Parameters.AddWithValue("@CurrentlyUse", currentUse)
             sqlConn.Open()
             objCommand.ExecuteNonQuery()
