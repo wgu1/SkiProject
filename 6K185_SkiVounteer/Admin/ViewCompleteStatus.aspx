@@ -38,8 +38,13 @@
                 </td>
 
                 <td class="auto-style1">
-                   
-       
+                       <asp:Label ID="SearchLabel" ForeColor="BurlyWood" runat="server" Text="Search by volunteer name or E-mail address"></asp:Label>
+
+                     <asp:TextBox ID="searchStatusTextbox" runat="server"></asp:TextBox>
+
+                     <asp:Button ID="searchStatusButton" runat="server" Text="Search" />
+                    <br />
+                
                     <asp:Label ID="CompleteStatusLabel"  ForeColor="BurlyWood"  runat="server" Text="Complete Status"></asp:Label>
                     <asp:DropDownList ID="CompleteStatusDropdownlist"  AutoPostBack="true" runat="server" >
                             <asp:ListItem value=" ">All People</asp:ListItem>
@@ -48,7 +53,7 @@
                     </asp:DropDownList>
                    
                     <br />
-                   
+                    <asp:Button ID="cleanStatusButton" runat="server" Text="Clear" /> 
                     </td>
                 <td class="auto-style7">
                      <br />
