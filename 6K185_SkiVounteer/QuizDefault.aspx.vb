@@ -22,7 +22,7 @@ Partial Class Quiz_Default
                 .Connection = conStr
                 .CommandType = CommandType.StoredProcedure
                 .CommandText = "Ski_Email_Select_Committee"
-                .Parameters.AddWithValue("@email", emailTextBox.Text.ToString().ToUpper())
+                .Parameters.AddWithValue("@email", emailTextBox.Text.ToString())
             End With
             conStr.Open()
             dataReader = cmd.ExecuteReader
@@ -40,8 +40,6 @@ Partial Class Quiz_Default
                         messageLb.BackColor = Drawing.Color.Red
                         Exit Sub
                     End If
-                    'make the 
-                    'make the committe listbox visible
                     committeeListBox.Visible = True
                     committeeListBox.DataSource = values
                     committeeListBox.DataBind()

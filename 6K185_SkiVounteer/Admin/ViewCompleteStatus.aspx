@@ -39,10 +39,7 @@
 
                 <td class="auto-style1">
                    
-                    <asp:Label ID="SearchLabel" runat="server" ForeColor="BurlyWood"  Text="Search by volunteer name or E-mail address"></asp:Label>
-                    <asp:TextBox ID="searchTextbox" runat="server"></asp:TextBox>
-                    <asp:Button ID="searchButton" runat="server" Text="Search" />
-                    <br />
+       
                     <asp:Label ID="CompleteStatusLabel"  ForeColor="BurlyWood"  runat="server" Text="Complete Status"></asp:Label>
                     <asp:DropDownList ID="CompleteStatusDropdownlist"  AutoPostBack="true" runat="server" >
                             <asp:ListItem value=" ">All People</asp:ListItem>
@@ -51,7 +48,6 @@
                     </asp:DropDownList>
                    
                     <br />
-                    <asp:Button ID="cleanButton" runat="server" Text="Clear" />
                    
                     </td>
                 <td class="auto-style7">
@@ -93,9 +89,9 @@
 
             <asp:SqlDataSource ID="SearchReportSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="Ski_Search_Completion_Status" SelectCommandType="StoredProcedure">
                         <SelectParameters>
-                            <asp:ControlParameter ControlID="hiddenSneakySearchLabel" Name="searchValue" ConvertEmptyStringToNull="true" PropertyName="Text" Type="String" />
-                            <asp:ControlParameter ControlID="CommunitteeDropDownList" Name="committeeID" ConvertEmptyStringToNull ="true" PropertyName="SelectedValue" Type="String" />
-                            <asp:ControlParameter ControlID="CompleteStatusDropdownlist" Name="completeStatus" ConvertEmptyStringToNull="true" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="hiddenSneakySearchLabel" Name="searchValue" ConvertEmptyStringToNull="true" DefaultValue="" PropertyName="Text" Type="String" />
+                            <asp:ControlParameter ControlID="CommunitteeDropDownList" Name="committeeID" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="CompleteStatusDropdownlist" Name="completeStatus" PropertyName="SelectedValue" Type="String" />
                            
                         </SelectParameters>
                     </asp:SqlDataSource>
