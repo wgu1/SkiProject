@@ -41,7 +41,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div>
-        <asp:label runat="server" Text="Select a Community to assign quizzes:" />
+        <asp:label runat="server" ForeColor="BurlyWood" Text="Select a Community to assign quizzes:" />
         <asp:DropDownList ID="CommunitteeDropDownList" runat="server" DataSourceID="communityDataSource" AutoPostBack="true" DataTextField="CommitteeName" DataValueField="CommitteeID" Height="16px"></asp:DropDownList>
         <asp:SqlDataSource ID="communityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="SELECT [CommitteeName], [CommitteeID] FROM [Ski_Committee]"></asp:SqlDataSource>
     </div>
@@ -59,11 +59,11 @@
 
                 <td class="auto-style6">
 
-                    <asp:Label ID="SearchLabel" runat="server" Text="Search Question Content:"></asp:Label>
+                    <asp:Label ID="SearchLabel" runat="server" ForeColor="BurlyWood" Text="Search Question Content:"></asp:Label>
                     <asp:TextBox ID="searchTextbox" runat="server"></asp:TextBox>
                     <asp:Button ID="searchButton" runat="server" Text="Search" />
                     <br />
-                    <asp:Label ID="QuestionTypeLabel" runat="server" Text="QuestionType"></asp:Label>
+                    <asp:Label ID="QuestionTypeLabel" runat="server" ForeColor="BurlyWood" Text="QuestionType"></asp:Label>
                     <asp:DropDownList ID="QuestionTypeDropdownlist"  AutoPostBack="true" runat="server" >
                             <asp:ListItem value="0">Select Value</asp:ListItem>
                             <asp:ListItem value="1">True/False</asp:ListItem>
@@ -75,9 +75,9 @@
 
             <tr>
                 <td class="auto-style4">
-                    <asp:Label runat="server" Text="Current Quizzes"></asp:Label>
+                    <asp:Label runat="server" ForeColor="BurlyWood" Text="Current Quizzes"></asp:Label>
                      <br />
-                     <asp:ListBox ID="currentQListbox" runat="server" DataSourceID="CommitteeQuestions" DataTextField="question" DataValueField="QuestionID" Height="114px" ></asp:ListBox>
+                     <asp:ListBox ID="currentQListbox" runat="server" DataSourceID="CommitteeQuestions" DataTextField="question" DataValueField="QuestionID"  Height="220px" ></asp:ListBox>
                 </td>
 
                 <td class="auto-style1">
@@ -85,9 +85,9 @@
                     <asp:Button ID="removeButton" runat="server" Text="Remove-->" />
                 </td>
                 <td class="auto-style7">
-                    <asp:Label runat="server" Text="Quiz Poll:"/>
+                    <asp:Label runat="server" ForeColor="BurlyWood" Text="Quiz Poll:"/>
                      <br />
-                     <asp:ListBox ID="RestQListbox" runat="server" DataSourceID="CommitteeRestQuestions" DataTextField="question" DataValueField="QuestionID" Height="102px"></asp:ListBox>
+                     <asp:ListBox ID="RestQListbox" runat="server" DataSourceID="CommitteeRestQuestions" DataTextField="question" DataValueField="QuestionID" Height="220px"></asp:ListBox>
                      
                 </td>
             </tr>
@@ -95,7 +95,7 @@
 
            <tr>
                 <td class="auto-style5">
-                    <asp:Label ID="hiddenSearchLabel" runat="server" Text=" " Visible="false"></asp:Label>
+                    <asp:Label ID="hiddenSearchLabel" runat="server" ForeColor="BurlyWood" Text=" " Visible="false"></asp:Label>
                 </td>
 
                 <td class="auto-style9">

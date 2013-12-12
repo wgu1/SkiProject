@@ -6,9 +6,9 @@
  <%-- the dropdownlist --%>
 <<div id="adminholder">
 
-   <asp:Label runat="server" Text="Select the quiz type you want to add" />
+   <asp:Label runat="server" ForeColor="BurlyWood" Text="Select the quiz type you want to add" />
 
-<h3>Please add more quiz questions(true/false or multiple choice)</h3>
+
 
 <asp:DropDownList ID="questionTypeDropDownList" runat="server" AutoPostBack="true">
     <asp:ListItem value="0">Select Question Type to add</asp:ListItem>
