@@ -54,7 +54,7 @@
                     <br />
                     <asp:Button ID="cleanButton" runat="server" Text="Clear" />
                    
-                    \</td>
+                    </td>
                 <td class="auto-style7">
                      <br />
                      
@@ -95,9 +95,8 @@
             <asp:SqlDataSource ID="SearchReportSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="Ski_Search_Completion_Status" SelectCommandType="StoredProcedure">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="hiddenSneakySearchLabel" Name="searchValue" ConvertEmptyStringToNull="true" PropertyName="Text" Type="String" />
-                           
-                            <asp:ControlParameter ControlID="CommunitteeDropDownList" Name="committeeID" PropertyName="SelectedValue" Type="String" />
-                            <asp:ControlParameter ControlID="CompleteStatusDropdownlist" Name="completeStatus" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="CommunitteeDropDownList" Name="committeeID" ConvertEmptyStringToNull ="true" PropertyName="SelectedValue" Type="String" />
+                            <asp:ControlParameter ControlID="CompleteStatusDropdownlist" Name="completeStatus" ConvertEmptyStringToNull="true" PropertyName="SelectedValue" Type="String" />
                            
                         </SelectParameters>
                     </asp:SqlDataSource>
