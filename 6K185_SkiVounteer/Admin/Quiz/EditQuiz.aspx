@@ -47,7 +47,7 @@
                   </tr> --%>
                   <tr>
                       <td colspan="2">
-                          <asp:Label ID="ASWContentLabel" runat="server" Text="AnswerText"></asp:Label>
+                          <asp:Label ID="ASWContentLabel" runat="server" ForeColor="BurlyWood" Text="AnswerText"></asp:Label>
                       </td>
                       <td colspan="8">
                           <asp:TextBox ID="ASWContentTextbox1" runat="server" ></asp:TextBox>
@@ -59,7 +59,7 @@
                   </tr>
               <tr>
                   <td colspan="4">
-                          <asp:Label ID="correctASWLabel" runat="server" Text="Correct Answer"></asp:Label>
+                          <asp:Label ID="correctASWLabel" runat="server" ForeColor="BurlyWood" Text="Correct Answer"></asp:Label>
                             <asp:dropdownlist ID="correctASWDrop" runat="server"></asp:dropdownlist>
                     </td>
               </tr>

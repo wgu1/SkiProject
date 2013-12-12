@@ -1,15 +1,16 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="ViewCompleteStatus.aspx.vb" Inherits="Admin_ViewCompleteStatus" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="false" CodeFile="ViewCompleteStatus.aspx.vb" Inherits="Admin_ViewCompleteStatus" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <style type="text/css">
-        .auto-style1 {
-            height: 20px;
-        }
-    </style>
+   
+    
+    
+    
+ 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-       <div>
-        <asp:label ID="Label1" runat="server" Text="Select a Community:" />
+    <div id="adminholder">
+    <div>
+        <asp:label ID="Label1" runat="server" ForeColor="BurlyWood"  Text="Select a Community:" />
         <asp:DropDownList ID="CommunitteeDropDownList" runat="server" DataSourceID="communityDataSource" AutoPostBack="true" DataTextField="CommitteeName" DataValueField="CommitteeID" Height="16px"></asp:DropDownList>
         <asp:SqlDataSource ID="communityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:fk185_ClassConnectionString %>" SelectCommand="SELECT [CommitteeName], [CommitteeID] FROM [Ski_Committee]"></asp:SqlDataSource>
            <br />
@@ -22,9 +23,7 @@
 
                 </td>
 
-                <td class="auto-style2">               
-                   <asp:Label runat="server" ID="statementLabel" Text="View complete status by differnt communities"></asp:Label> 
-                 </td>
+             
 
                 <td class="auto-style6">
 
@@ -40,11 +39,11 @@
 
                 <td class="auto-style1">
                    
-                    <asp:Label ID="SearchLabel" runat="server" Text="Search by volunteer name or E-mail address"></asp:Label>
+                    <asp:Label ID="SearchLabel" runat="server" ForeColor="BurlyWood"  Text="Search by volunteer name or E-mail address"></asp:Label>
                     <asp:TextBox ID="searchTextbox" runat="server"></asp:TextBox>
                     <asp:Button ID="searchButton" runat="server" Text="Search" />
                     <br />
-                    <asp:Label ID="CompleteStatusLabel" runat="server" Text="Complete Status"></asp:Label>
+                    <asp:Label ID="CompleteStatusLabel"  ForeColor="BurlyWood"  runat="server" Text="Complete Status"></asp:Label>
                     <asp:DropDownList ID="CompleteStatusDropdownlist"  AutoPostBack="true" runat="server" >
                             <asp:ListItem value=" ">All People</asp:ListItem>
                             <asp:ListItem value="Y">Finished</asp:ListItem>
@@ -100,5 +99,7 @@
                            
                         </SelectParameters>
                     </asp:SqlDataSource>
+
+        </div>
 </asp:Content>
 

@@ -17,13 +17,26 @@ Partial Class Admin_Volunteer
         email = EmailTextBox.Text.Trim
         Committee = CStr(ddlCommittee.SelectedValue)
 
+        If FNameTextBox.Text = "" Then
+            ResultLabel.Text = "Please enter a valid first name."
+            Exit Sub
+        End If
+        If LNameTextBox.Text = "" Then
+            ResultLabel.Text = "Please enter a valid last name."
+            Exit Sub
+        End If
+        If EmailTextBox.Text = "" Then
+            ResultLabel.Text = "Please enter a valid e-mail address."
+            Exit Sub
+        End If
+
         strConnectionString = ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString
         Dim sqlConn As New SqlConnection(strConnectionString)
 
         Try
             sql = "INSERT INTO Ski_Volunteer (Email, FirstName, LastName) Values (@email, @Fname, @Lname);"
             objCommand = New SqlCommand(sql, sqlConn)
-            objCommand.Parameters.AddWithValue("@email", email)
+            objCommand.Parameters.AddWithValue("@email", UCase(email))
             objCommand.Parameters.AddWithValue("@Fname", Fname)
             objCommand.Parameters.AddWithValue("@Lname", Lname)
             sqlConn.Open()
@@ -32,7 +45,7 @@ Partial Class Admin_Volunteer
 
             sql = "INSERT INTO Ski_CompletionCertificate (Email, CommitteeID) Values (@email, @CommitteeID);"
             objCommand = New SqlCommand(sql, sqlConn)
-            objCommand.Parameters.AddWithValue("@email", email)
+            objCommand.Parameters.AddWithValue("@email", UCase(email))
             objCommand.Parameters.AddWithValue("@CommitteeID", Committee.Trim)
             sqlConn.Open()
             objCommand.ExecuteNonQuery()
@@ -50,20 +63,25 @@ Partial Class Admin_Volunteer
 
         email = DeleteTextBox.Text.Trim
 
+        If DeleteTextBox.Text = "" Then
+            ResultLabel2.Text = "Please enter a valid e-mail address."
+            Exit Sub
+        End If
+
         strConnectionString = ConfigurationManager.ConnectionStrings("fk185_ClassConnectionString").ConnectionString
         Dim sqlConn As New SqlConnection(strConnectionString)
 
         Try
             sql = "DELETE FROM Ski_CompletionCertificate WHERE email = @email;"
             objCommand = New SqlCommand(sql, sqlConn)
-            objCommand.Parameters.AddWithValue("@email", email)
+            objCommand.Parameters.AddWithValue("@email", UCase(email))
             sqlConn.Open()
             objCommand.ExecuteNonQuery()
             sqlConn.Close()
 
             sql = "DELETE FROM Ski_Volunteer WHERE email = @email;"
             objCommand = New SqlCommand(sql, sqlConn)
-            objCommand.Parameters.AddWithValue("@email", email)
+            objCommand.Parameters.AddWithValue("@email", UCase(email))
             sqlConn.Open()
             objCommand.ExecuteNonQuery()
             Response.Redirect("~/Admin/Volunteer.aspx")

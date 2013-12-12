@@ -21,8 +21,8 @@
 
 <div class="header">
             <div class="title">
-                <h1 align="center"><a href="HomePage.aspx">Vail Beaver Creek 2015 World Alpine Ski Championships</a></h1>
-                <h3 align="center" >Volunteer Training Project</h3>
+                <asp:HyperLink ID="HyperLink7" NavigateUrl="~/HomePage.aspx" runat="server"><h1 align="center">Vail Beaver Creek 2015 World Alpine Ski Championships</h1></asp:HyperLink>
+                <h3 align="center">Volunteer Training Module</h3>
             </div>
    
 	        <div id="menubar">
