@@ -159,7 +159,7 @@ Partial Class Quiz_EditQuiz
             objCommand = New SqlCommand(sql_1, sqlConn)
             objCommand.Parameters.AddWithValue("@QuestionCode", QuestionCode)
             objCommand.Parameters.AddWithValue("@QuesitonContent", questionTextbox.Text)
-            objCommand.Parameters.AddWithValue("@QAswer", _answerDropdown.SelectedValue)
+            objCommand.Parameters.AddWithValue("@QAswer", _answerDropdown.SelectedItem)
             objCommand.Parameters.AddWithValue("@CurrentlyUse", currentUse)
             sqlConn.Open()
             objCommand.ExecuteNonQuery()
